@@ -81,14 +81,14 @@ window.EngineRoom = (function () {
         <rect x="4" y="8" width="112" height="46" rx="2" fill="none" stroke="currentColor" stroke-width="2"/>
     </svg>`;
 
-    // Learning Curve: system models in teaching order. Picture Statistics: data as Isotype charts.
+    // Learning Curve: system models in teaching order. Picture Statistics: data counted in symbols.
     const LEARNING_CURVE = [
         { id: 'bicycle-shop', title: 'The Bicycle Shop', text: 'One stock, two balancing loops, then delays. Why the shelf is never quite full, and why reacting faster makes it worse.', open: true },
         { id: 'oil-economy', title: 'The Oil Economy', text: 'A company grows on a resource that never comes back. Set the growth goal, double the oil field, raise the price. Watch where the peak goes.', open: true },
         { id: 'fishery', title: 'The Fishery', text: 'Capital on a renewable resource. Fish grow back, unless the fleet grows faster.' }
     ];
     const PICTURE_STATISTICS = [
-        { id: 'square-metre', title: 'One Square Metre', text: 'What a square metre costs around the world, and how many years of work buy it. Counted in symbols, after Otto Neurath.' }
+        { id: 'square-metre', title: 'One Square Metre', text: 'What does a million buy? Floor space in the ten priciest housing markets, counted in tiles.', open: true }
     ];
 
     const card = (x, label) => `
@@ -125,7 +125,7 @@ window.EngineRoom = (function () {
                 <section class="er-section">
                     <div class="er-section-head">
                         <h2>Picture Statistics</h2>
-                        <p>Facts as pictures, after Otto Neurath's Isotype: one symbol is one fixed quantity. Count them.</p>
+                        <p>Facts as pictures: one symbol is one fixed amount. Count them, don't measure them.</p>
                     </div>
                     <div class="exhibits">
                         ${PICTURE_STATISTICS.map(x => card(x, 'Chart')).join('')}
@@ -464,6 +464,7 @@ window.EngineRoom = (function () {
         if (window.EngineRoomShop) window.EngineRoomShop.stop();
         if (parts[1] === 'oil-economy') renderOil(view);
         else if (parts[1] === 'bicycle-shop' && window.EngineRoomShop) window.EngineRoomShop.render(view, H);
+        else if (parts[1] === 'square-metre' && window.EngineRoomSqm) window.EngineRoomSqm.render(view, H);
         else renderHall(view);
     }
 

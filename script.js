@@ -540,7 +540,7 @@
         const section = ['index', 'engine-room'].includes(parts[0]) ? parts[0] : 'articles';
         root.querySelectorAll('[data-nav]').forEach(a => a.classList.toggle('active', a.dataset.nav === section));
 
-        if (section === 'engine-room') window.EngineRoom.render(view, parts, { esc, fmt, bulb });
+        if (section === 'engine-room') window.EngineRoom.render(view, parts, { esc, fmt, bulb, dot });
         else if (section === 'index' && parts[1]) renderEntry(decodeURIComponent(parts[1]));
         else if (section === 'index') renderIndex();
         else renderArticles();

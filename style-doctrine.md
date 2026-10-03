@@ -84,14 +84,14 @@ The machinery under the four floors, in two separate collections:
 - **Learning Curve**: system models in teaching order. Step 1 The Bicycle Shop (one stock, competing balancing
   loops, delays: the thermostat in business clothes), Step 2 The Oil Economy, Step 3 The Fishery. Each step links
   to the next; each uses everyday business examples rather than abstract ones.
-- **Picture Statistics**: current data as Isotype charts (first: One Square Metre). Kept apart from the models.
+- **Picture Statistics**: current data counted in symbols (first: One Square Metre). Kept apart from the models.
 
 - **Emblem:** the shipping container (1956). Trade flow, a physical product, a standard unit.
 - **System models** follow Donella Meadows' stock-and-flow notation, in colour: tanks (stocks), pipes with
   faucets (flows), clouds (model edge), thin arrows (information links), red **R** and blue **B** loop markers.
   Liquid width = flow rate; faucet handles turn with flow. Every part is clickable and explains itself.
   Models are our own simplifications; we cite the book, never reproduce its figures or text.
-- **Isotype charts** (Otto Neurath): count symbols, never scale them. One symbol = one fixed quantity. The symbol
+- **Picture statistics**: count symbols, never scale them. One symbol = one fixed quantity. The symbol
   shows the thing counted. Charts stay flat; 3D is reserved for system models you can spin.
 - **3D dioramas** sit on a museum turntable with an underground cutaway (soil strata). Fixed doctrine colours,
   cream placards for labels, see-through pipes with flowing particles, ball valves that turn open. Where a stock
