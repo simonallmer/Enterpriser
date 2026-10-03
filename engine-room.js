@@ -81,12 +81,24 @@ window.EngineRoom = (function () {
         <rect x="4" y="8" width="112" height="46" rx="2" fill="none" stroke="currentColor" stroke-width="2"/>
     </svg>`;
 
-    const EXHIBITS = [
-        { id: 'oil-economy', no: 1, title: 'The Oil Economy', text: 'A company grows on a resource that never comes back. Set the growth goal, double the oil field, raise the price. Watch where the peak goes.', open: true },
-        { id: 'fishery', no: 2, title: 'The Fishery', text: 'Capital on a renewable resource. Fish grow back, unless the fleet grows faster.' },
-        { id: 'thermostat', no: 3, title: 'The Thermostat', text: 'The simplest balancing loop, and why it never quite hits its goal.' },
-        { id: 'square-metre', no: 4, title: 'One Square Metre', text: 'An Isotype chart: what a square metre costs around the world, and how many years of work buy it.' }
+    // Learning Curve: system models in teaching order. Picture Statistics: data as Isotype charts.
+    const LEARNING_CURVE = [
+        { id: 'bicycle-shop', title: 'The Bicycle Shop', text: 'One stock, two balancing loops, then delays. Why the shelf is never quite full, and why reacting faster makes it worse.', open: true },
+        { id: 'oil-economy', title: 'The Oil Economy', text: 'A company grows on a resource that never comes back. Set the growth goal, double the oil field, raise the price. Watch where the peak goes.', open: true },
+        { id: 'fishery', title: 'The Fishery', text: 'Capital on a renewable resource. Fish grow back, unless the fleet grows faster.' }
     ];
+    const PICTURE_STATISTICS = [
+        { id: 'square-metre', title: 'One Square Metre', text: 'What a square metre costs around the world, and how many years of work buy it. Counted in symbols, after Otto Neurath.' }
+    ];
+
+    const card = (x, label) => `
+        <${x.open ? `a href="#/engine-room/${x.id}"` : 'div'} class="exhibit ${x.open ? 'open' : 'soon'}">
+            <span class="exhibit-lamp">${H.bulb(!!x.open)}</span>
+            <span class="label">${label}${x.open ? '' : ' · Coming soon'}</span>
+            <h2>${H.esc(x.title)}</h2>
+            <p>${H.esc(x.text)}</p>
+            ${x.open ? '<span class="exhibit-go">Step inside →</span>' : ''}
+        </${x.open ? 'a' : 'div'}>`;
 
     // ---------- Exhibit hall ----------
 
@@ -99,17 +111,28 @@ window.EngineRoom = (function () {
                     <h1>Engine Room</h1>
                     <p>Below the floors, the machinery. Systems you can run: tanks you can fill, faucets you can open, loops you can watch. Click any term to see what it means.</p>
                 </div>
-                <div class="exhibits">
-                    ${EXHIBITS.map(x => `
-                        <${x.open ? `a href="#/engine-room/${x.id}"` : 'div'} class="exhibit ${x.open ? 'open' : 'soon'}">
-                            <span class="exhibit-lamp">${H.bulb(!!x.open)}</span>
-                            <span class="label">Exhibit No. ${x.no}${x.open ? '' : ' · Coming soon'}</span>
-                            <h2>${H.esc(x.title)}</h2>
-                            <p>${H.esc(x.text)}</p>
-                            ${x.open ? '<span class="exhibit-go">Step inside →</span>' : ''}
-                        </${x.open ? 'a' : 'div'}>`).join('')}
-                </div>
-                <p class="er-credit">Models after Donella H. Meadows, <i>Thinking in Systems: A Primer</i> (2008). Explanations, numbers and drawings are our own.</p>
+
+                <section class="er-section">
+                    <div class="er-section-head">
+                        <h2>Learning Curve</h2>
+                        <p>How systems behave, one step at a time. Each step builds on the one before.</p>
+                    </div>
+                    <div class="exhibits track">
+                        ${LEARNING_CURVE.map((x, i) => card(x, `Step ${i + 1}`)).join('')}
+                    </div>
+                </section>
+
+                <section class="er-section">
+                    <div class="er-section-head">
+                        <h2>Picture Statistics</h2>
+                        <p>Facts as pictures, after Otto Neurath's Isotype: one symbol is one fixed quantity. Count them.</p>
+                    </div>
+                    <div class="exhibits">
+                        ${PICTURE_STATISTICS.map(x => card(x, 'Chart')).join('')}
+                    </div>
+                </section>
+
+                <p class="er-credit">System models after Donella H. Meadows, <i>Thinking in Systems: A Primer</i> (2008). Examples, explanations, numbers and drawings are our own.</p>
             </div>`;
     }
 
@@ -244,7 +267,7 @@ window.EngineRoom = (function () {
             <div class="wrap">
                 <a class="crumb" href="#/engine-room">← Engine Room</a>
                 <div class="er-title">
-                    <span class="label">Exhibit No. 1</span>
+                    <span class="label">Learning Curve · Step 2</span>
                     <h1>Does the oil field <u>last</u>?</h1>
                     <p>A company finds a field with enough oil for 200 years at today's pace. It reinvests its profits to grow. Press <b>Run</b> and watch what happens.</p>
                 </div>
@@ -292,6 +315,10 @@ window.EngineRoom = (function () {
                         <li>The last oil stays underground. Getting it out costs more than it earns.</li>
                         <li>The real choice: get rich fast, or less rich for longer. A miner's job depends on the second.</li>
                     </ol>
+                </div>
+                <div class="er-next">
+                    <a href="#/engine-room/bicycle-shop" class="er-prev">← Step 1: The Bicycle Shop</a>
+                    <span class="er-soon">Step 3: The Fishery · coming soon</span>
                 </div>
                 <p class="er-credit">Model after Donella H. Meadows, <i>Thinking in Systems: A Primer</i> (2008), chapter 2, “A Renewable Stock Constrained by a Nonrenewable Stock.” Parameters and wording are our own simplification.</p>
             </div>`;
@@ -434,7 +461,9 @@ window.EngineRoom = (function () {
         H = helpers;
         stop();
         close3d();
+        if (window.EngineRoomShop) window.EngineRoomShop.stop();
         if (parts[1] === 'oil-economy') renderOil(view);
+        else if (parts[1] === 'bicycle-shop' && window.EngineRoomShop) window.EngineRoomShop.render(view, H);
         else renderHall(view);
     }
 

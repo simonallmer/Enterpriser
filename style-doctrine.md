@@ -79,7 +79,12 @@ lights-on/lights-off switch.
 
 ## Engine Room (basement)
 
-The machinery under the four floors: interactive system models and Isotype data.
+The machinery under the four floors, in two separate collections:
+
+- **Learning Curve**: system models in teaching order. Step 1 The Bicycle Shop (one stock, competing balancing
+  loops, delays: the thermostat in business clothes), Step 2 The Oil Economy, Step 3 The Fishery. Each step links
+  to the next; each uses everyday business examples rather than abstract ones.
+- **Picture Statistics**: current data as Isotype charts (first: One Square Metre). Kept apart from the models.
 
 - **Emblem:** the shipping container (1956). Trade flow, a physical product, a standard unit.
 - **System models** follow Donella Meadows' stock-and-flow notation, in colour: tanks (stocks), pipes with

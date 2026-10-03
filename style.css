@@ -1618,6 +1618,124 @@ body {
     color: var(--red);
 }
 
+/* Hall sections */
+.ent .er-section {
+    margin-top: 28px;
+}
+
+.ent .er-section-head {
+    display: flex;
+    align-items: baseline;
+    gap: 18px;
+    flex-wrap: wrap;
+    border-bottom: 3px double var(--ink);
+    padding-bottom: 8px;
+    margin-bottom: 18px;
+}
+
+.ent .er-section-head h2 {
+    font-family: var(--font-display);
+    font-stretch: 75%;
+    font-weight: 800;
+    font-size: 30px;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.ent .er-section-head p {
+    margin: 0;
+    color: var(--ink-2);
+    font-size: 15px;
+}
+
+/* Learning curve: cards joined by a wire with lamps */
+.ent .exhibits.track {
+    position: relative;
+}
+
+.ent .exhibits.track::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 27px;
+    border-top: 2px dashed var(--ink-3);
+    z-index: 0;
+}
+
+.ent .exhibits.track .exhibit {
+    z-index: 1;
+}
+
+/* Delay marks, legends, steps */
+.ent .er-diagram .delay line {
+    stroke: var(--red);
+    stroke-width: 2.5;
+}
+
+.ent .er-diagram .delay text {
+    fill: var(--red);
+}
+
+.ent .er-diagram .delay.hl line {
+    stroke-width: 4;
+}
+
+.ent .er-legend {
+    font-family: var(--font-type);
+    font-size: 11px;
+    color: var(--ink-3);
+}
+
+.ent .er-legend i {
+    display: inline-block;
+    width: 14px;
+    height: 0;
+    border-top: 3px solid var(--c);
+    vertical-align: middle;
+    margin: 0 4px 0 8px;
+}
+
+.ent .er-legend i.dash {
+    border-top-style: dashed;
+}
+
+.ent .er-try {
+    padding: 3px 10px;
+    font-size: 12px;
+    margin-left: 6px;
+    vertical-align: 1px;
+}
+
+.ent .er-next {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-top: 36px;
+}
+
+.ent .er-next .btn {
+    margin-left: auto;
+}
+
+.ent .er-prev {
+    font-family: var(--font-display);
+    font-stretch: 75%;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--red);
+}
+
+.ent .er-soon {
+    font-family: var(--font-type);
+    font-size: 13px;
+    color: var(--ink-3);
+}
+
 /* 3D view */
 .ent .er-viewbar {
     display: flex;
