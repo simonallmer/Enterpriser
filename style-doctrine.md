@@ -88,6 +88,9 @@ The machinery under the four floors: interactive system models and Isotype data.
   Models are our own simplifications; we cite the book, never reproduce its figures or text.
 - **Isotype charts** (Otto Neurath): count symbols, never scale them. One symbol = one fixed quantity. The symbol
   shows the thing counted. Charts stay flat; 3D is reserved for system models you can spin.
+- **3D dioramas** sit on a museum turntable with an underground cutaway (soil strata). Fixed doctrine colours,
+  cream placards for labels, see-through pipes with flowing particles, ball valves that turn open. Where a stock
+  is made of things, count them (one pumpjack = 10 units of capital). Idle sway around the front view; drag to spin.
 
 ## 5. Illustration
 

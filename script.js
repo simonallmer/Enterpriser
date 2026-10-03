@@ -411,7 +411,7 @@
                     }).join('')}
                 </tbody>
             </table>
-            ${list.length > shown.length ? `<div class="more"><button class="btn" type="button">Print ${Math.min(PAGE, list.length - shown.length)} more</button></div>` : ''}`;
+            ${list.length > shown.length ? `<div class="more"><button class="btn" type="button">${Math.min(PAGE, list.length - shown.length)} More</button></div>` : ''}`;
 
         box.querySelectorAll('tbody tr').forEach(tr => {
             const go = () => { location.hash = `#/index/${tr.dataset.uid}`; };

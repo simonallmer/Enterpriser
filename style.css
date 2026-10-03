@@ -1618,6 +1618,54 @@ body {
     color: var(--red);
 }
 
+/* 3D view */
+.ent .er-viewbar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+}
+
+.ent .er-hint {
+    font-family: var(--font-type);
+    font-size: 13px;
+    color: var(--ink-3);
+    margin-left: auto;
+}
+
+.ent .er-3d {
+    display: none;
+    position: relative;
+    height: clamp(380px, 56vw, 600px);
+    margin: 0 -18px;
+    background: radial-gradient(ellipse at 50% 35%, rgba(247, 229, 138, 0.18), transparent 65%);
+}
+
+.ent .er-stage.is-3d .er-3d {
+    display: block;
+}
+
+.ent .er-stage.is-3d .er-diagram {
+    display: none;
+}
+
+.ent .er-3d canvas {
+    display: block;
+}
+
+.ent .er-3d-msg {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    margin: 0;
+    font-family: var(--font-type);
+    color: var(--ink-3);
+    text-align: center;
+    padding: 0 24px;
+}
+
 /* ---------- Motion preferences ---------- */
 
 @media (prefers-reduced-motion: reduce) {
@@ -1717,6 +1765,10 @@ body {
 
     .ent .er-def {
         margin: 8px -8px 0;
+    }
+
+    .ent .er-3d {
+        margin: 0 -8px;
     }
 
     .ent .hero-panel {

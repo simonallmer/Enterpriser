@@ -234,8 +234,8 @@ window.EngineRoom = (function () {
             </figure>`;
     }
 
-    const state = { growth: 0.05, size: 1, rising: false };
-    let ghost = null, run = null, idx = 0, anim = null;
+    const state = { growth: 0.05, size: 1, rising: false, view: '2d' };
+    let ghost = null, run = null, idx = 0, anim = null, model3d = null;
 
     function renderOil(view) {
         run = simulate(state);
@@ -249,8 +249,17 @@ window.EngineRoom = (function () {
                     <p>A company finds a field with enough oil for 200 years at today's pace. It reinvests its profits to grow. Press <b>Run</b> and watch what happens.</p>
                 </div>
 
-                <div class="er-stage">
+                <div class="er-viewbar">
+                    <span class="label">View</span>
+                    <span class="keys">
+                        <button type="button" class="key ${state.view === '2d' ? 'on' : ''}" data-view="2d">Drawing</button>
+                        <button type="button" class="key ${state.view === '3d' ? 'on' : ''}" data-view="3d">3D Model</button>
+                    </span>
+                    <span class="er-hint" id="er-hint">${state.view === '3d' ? 'Drag to spin · click a part' : 'Click a part'}</span>
+                </div>
+                <div class="er-stage ${state.view === '3d' ? 'is-3d' : ''}">
                     ${diagram()}
+                    <div class="er-3d" id="er-3d"></div>
                     <div class="er-def" id="er-def" aria-live="polite">
                         <span class="label">Click any part of the machine</span>
                         <p>Tanks, pipes, faucets, clouds and loops all explain themselves.</p>
@@ -289,6 +298,7 @@ window.EngineRoom = (function () {
 
         bind(view);
         paint(view);
+        if (state.view === '3d') open3d(view);
         const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
         if (reduce) { idx = run.t.length - 1; paint(view); } else play(view);
     }
@@ -313,6 +323,10 @@ window.EngineRoom = (function () {
             view.querySelector(`#${id}-pipe`).setAttribute('stroke-width', (1 + f * 13).toFixed(1));
             view.querySelector(`#${id}-pipe`).style.opacity = v < 0.05 ? 0.15 : 1;
             view.querySelector(`#${id}-handle`).setAttribute('transform', `rotate(${(-90 + f * 90).toFixed(0)})`);
+        });
+        if (model3d) model3d.update({
+            capital: run.C[i], capMax, resource: run.S[i], r0: run.r0,
+            investment: run.I[i], depreciation: run.D[i], extraction: run.E[i], flowMax
         });
         // charts and readouts
         view.querySelector('#er-charts').innerHTML =
@@ -353,6 +367,36 @@ window.EngineRoom = (function () {
         if (!g) return;
         view.querySelector('#er-def').innerHTML = `<span class="label">${H.esc(g[0])}</span><p>${H.esc(g[1])}</p>`;
         view.querySelectorAll('.er-diagram [data-term]').forEach(el => el.classList.toggle('hl', el.dataset.term === key));
+        if (model3d) model3d.highlight(key);
+    }
+
+    function close3d() {
+        if (model3d) { model3d.dispose(); model3d = null; }
+    }
+
+    async function open3d(view) {
+        const box = view.querySelector('#er-3d');
+        if (!box || model3d) return;
+        if (!window.EngineRoom3D) { box.innerHTML = '<p class="er-3d-msg">3D model unavailable.</p>'; return; }
+        box.innerHTML = '<p class="er-3d-msg">Assembling the model…</p>';
+        try {
+            const m = await window.EngineRoom3D.mount(box, { onPick: key => define(view, key) });
+            if (!box.isConnected || state.view !== '3d') { m.dispose(); return; }
+            box.querySelector('.er-3d-msg')?.remove();
+            model3d = m;
+            paint(view);
+        } catch (err) {
+            console.error(err);
+            box.innerHTML = '<p class="er-3d-msg">The 3D model could not load (no WebGL or no connection). The drawing still works.</p>';
+        }
+    }
+
+    function setView(view, mode) {
+        state.view = mode;
+        view.querySelectorAll('[data-view]').forEach(b => b.classList.toggle('on', b.dataset.view === mode));
+        view.querySelector('.er-stage').classList.toggle('is-3d', mode === '3d');
+        view.querySelector('#er-hint').textContent = mode === '3d' ? 'Drag to spin · click a part' : 'Click a part';
+        if (mode === '3d') open3d(view); else close3d();
     }
 
     function bind(view) {
@@ -366,6 +410,7 @@ window.EngineRoom = (function () {
                 }
             }
         });
+        view.querySelectorAll('[data-view]').forEach(b => b.addEventListener('click', () => setView(view, b.dataset.view)));
         const btn = view.querySelector('#er-play');
         btn.addEventListener('click', () => { if (anim) { stop(); btn.textContent = 'Run'; } else play(view); });
         view.querySelector('#er-year').addEventListener('input', ev => { stop(); btn.textContent = 'Run'; idx = +ev.target.value; paint(view); });
@@ -388,6 +433,7 @@ window.EngineRoom = (function () {
     function render(view, parts, helpers) {
         H = helpers;
         stop();
+        close3d();
         if (parts[1] === 'oil-economy') renderOil(view);
         else renderHall(view);
     }
