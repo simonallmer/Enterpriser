@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enterpriser</title>
+    <meta name="description" content="Enterpriser — for those who build. A journal by Allmer Journals, with the Enterpriser Index.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Courier+Prime:wght@400;700&family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script>
+        // Apply saved theme before paint ("lights on" / "lights off")
+        try { const t = localStorage.getItem('enterpriser-theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) { }
+    </script>
+</head>
+
+<body>
+    <!-- Mount point. The app renders entirely inside #enterpriser, so it can be embedded via iframe or dropped into a host page. -->
+    <div id="enterpriser" class="ent"></div>
+
+    <script src="data.js"></script>
+    <script src="data-sp500.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
