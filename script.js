@@ -152,7 +152,7 @@
         <main id="ent-view"></main>
         <footer class="footer">
             <div class="wrap">
-                <span class="small">Allmer Journals · Simon Allmer Entertainment</span>
+                <span class="small"><a href="https://simonallmer.com/journals" target="_top">Allmer Journals</a> · <a href="https://simonallmer.com" target="_top">Simon Allmer Entertainment</a></span>
                 <span class="sig">Enterpriser</span>
                 <span class="small">For those who build</span>
             </div>

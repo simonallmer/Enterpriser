@@ -285,6 +285,14 @@ body {
     line-height: 1;
 }
 
+.ent .footer .small a {
+    text-decoration: none;
+}
+
+.ent .footer .small a:hover {
+    color: var(--red);
+}
+
 .ent .footer .small:last-child {
     text-align: right;
 }
