@@ -144,6 +144,7 @@
                 <nav class="nav">
                     <a href="#/" data-nav="articles">Articles</a>
                     <a href="#/index" data-nav="index">Index</a>
+                    <a href="#/engine-room" data-nav="engine-room">Engine Room</a>
                 </nav>
                 <button class="lamp" type="button"></button>
                 <a href="https://simonallmer.com" class="back-link" target="_top">Back to SA</a>
@@ -249,8 +250,8 @@
 
                 <div class="section-head">
                     <span class="label">The building</span>
-                    <h2>Four floors of Enterpriser</h2>
-                    <p>Every article lives on one floor.</p>
+                    <h2>Four floors and an Engine Room</h2>
+                    <p>Every article lives on one floor. The machinery runs in the basement.</p>
                 </div>
 
                 <div class="building">
@@ -265,6 +266,11 @@
                             <div><h3>${title}</h3><p>${text}</p></div>
                             <span style="color:${color}">${PICTO[icon]}</span>
                         </div>`).join('')}
+                    <a class="floor basement" href="#/engine-room" style="--floor:var(--midnight)">
+                        <div class="num"><b>B</b>Basement</div>
+                        <div><h3>Engine Room →</h3><p>How systems behave. Stocks, flows and feedback loops, built as machines you can run.</p></div>
+                        <span class="basement-icon">${window.EngineRoom.CONTAINER}</span>
+                    </a>
                 </div>
 
                 <p class="not-here">Not on any floor: <s>rich lists</s><span class="ticks">///</span><s>IPO playbooks</s><span class="ticks">///</span><s>office politics</s></p>
@@ -531,10 +537,11 @@
 
     function route() {
         const parts = location.hash.replace(/^#\/?/, '').split('/').filter(Boolean);
-        const section = parts[0] === 'index' ? 'index' : 'articles';
+        const section = ['index', 'engine-room'].includes(parts[0]) ? parts[0] : 'articles';
         root.querySelectorAll('[data-nav]').forEach(a => a.classList.toggle('active', a.dataset.nav === section));
 
-        if (section === 'index' && parts[1]) renderEntry(decodeURIComponent(parts[1]));
+        if (section === 'engine-room') window.EngineRoom.render(view, parts, { esc, fmt, bulb });
+        else if (section === 'index' && parts[1]) renderEntry(decodeURIComponent(parts[1]));
         else if (section === 'index') renderIndex();
         else renderArticles();
 

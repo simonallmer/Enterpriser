@@ -1194,6 +1194,430 @@ body {
     font-style: italic;
 }
 
+/* ---------- Engine Room ---------- */
+
+.ent .floor.basement {
+    text-decoration: none;
+    background: var(--paper-2);
+    border-style: dashed;
+    transition: transform 0.15s;
+}
+
+.ent .floor.basement:hover {
+    transform: translateY(-2px);
+}
+
+.ent .basement-icon {
+    justify-self: end;
+    color: var(--ink);
+}
+
+.ent .basement-icon svg {
+    width: 104px;
+    height: 52px;
+}
+
+.ent .term {
+    background: none;
+    border: 0;
+    padding: 0;
+    font: inherit;
+    color: inherit;
+    cursor: help;
+    text-decoration: underline dotted;
+    text-decoration-color: var(--red);
+    text-underline-offset: 3px;
+}
+
+.ent .term:hover,
+.ent .term:focus-visible {
+    color: var(--red);
+    outline: none;
+}
+
+.ent .er-head {
+    text-align: center;
+    padding: 52px 0 28px;
+}
+
+.ent .er-emblem svg {
+    width: 120px;
+    height: 60px;
+    color: var(--ink);
+}
+
+.ent .er-head h1,
+.ent .er-title h1 {
+    font-family: var(--font-display);
+    font-stretch: 62%;
+    font-weight: 800;
+    font-size: clamp(44px, 8vw, 92px);
+    line-height: 0.92;
+    text-transform: uppercase;
+    margin: 8px 0 14px;
+}
+
+.ent .er-head p,
+.ent .er-title p {
+    color: var(--ink-2);
+    margin: 0 auto;
+    max-width: 60ch;
+}
+
+.ent .exhibits {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 18px;
+}
+
+.ent .exhibit {
+    position: relative;
+    display: block;
+    text-decoration: none;
+    background: var(--card);
+    border: 1px solid var(--ink);
+    padding: 22px 22px 26px;
+    clip-path: polygon(22px 0, 100% 0, 100% 100%, 0 100%, 0 22px);
+}
+
+.ent .exhibit.open:hover {
+    background: var(--paper-2);
+}
+
+.ent .exhibit.soon {
+    opacity: 0.62;
+}
+
+.ent .exhibit-lamp svg {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    width: 18px;
+    height: 18px;
+}
+
+.ent .exhibit h2 {
+    font-family: var(--font-display);
+    font-stretch: 75%;
+    font-weight: 800;
+    font-size: 26px;
+    text-transform: uppercase;
+    line-height: 1.05;
+    margin: 6px 0 8px;
+}
+
+.ent .exhibit p {
+    margin: 0;
+    color: var(--ink-2);
+    font-size: 15px;
+}
+
+.ent .exhibit-go {
+    display: inline-block;
+    margin-top: 14px;
+    font-family: var(--font-display);
+    font-stretch: 75%;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--red);
+}
+
+.ent .er-credit {
+    text-align: center;
+    font-size: 13px;
+    color: var(--ink-3);
+    margin: 36px auto 64px;
+    max-width: 70ch;
+}
+
+.ent .er-title {
+    text-align: center;
+    padding: 24px 0 28px;
+}
+
+.ent .er-title h1 {
+    font-stretch: 125%;
+    font-weight: 900;
+    font-size: clamp(30px, 5vw, 58px);
+    line-height: 1;
+}
+
+.ent .er-title h1 u {
+    text-decoration-thickness: 0.07em;
+    text-underline-offset: 0.12em;
+    color: var(--headline-blue);
+}
+
+/* Diagram stage: a drawing board with a blueprint grid */
+.ent .er-stage {
+    background-color: var(--card);
+    background-image:
+        linear-gradient(rgba(46, 125, 181, 0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(46, 125, 181, 0.08) 1px, transparent 1px);
+    background-size: 20px 20px;
+    border: 1px solid var(--ink);
+    padding: 18px 18px 0;
+}
+
+.ent .er-diagram {
+    display: block;
+    width: 100%;
+    max-width: 860px;
+    height: auto;
+    margin: 0 auto;
+}
+
+.ent .er-diagram [data-term] {
+    cursor: pointer;
+}
+
+.ent .er-diagram .pipe {
+    stroke: var(--steel);
+    stroke-width: 16;
+}
+
+.ent .er-diagram .liquid {
+    stroke-linecap: butt;
+    transition: stroke-width 0.1s;
+}
+
+.ent .er-diagram .tank {
+    fill: var(--paper);
+}
+
+.ent .er-diagram .tank-frame {
+    fill: none;
+    stroke: var(--ink);
+    stroke-width: 2.5;
+}
+
+.ent .er-diagram .cloud {
+    fill: var(--paper);
+    stroke: var(--ink-2);
+    stroke-width: 1.5;
+}
+
+.ent .er-diagram .conv circle {
+    fill: var(--paper);
+    stroke: var(--ink);
+    stroke-width: 1.6;
+}
+
+.ent .er-diagram .conv text,
+.ent .er-diagram .er-label {
+    font-family: var(--font-display);
+    font-stretch: 75%;
+    font-weight: 700;
+    font-size: 14px;
+    fill: var(--ink);
+}
+
+.ent .er-diagram .er-value {
+    font-family: var(--font-type);
+    font-weight: 700;
+    font-size: 18px;
+    fill: var(--ink);
+    paint-order: stroke;
+    stroke: var(--paper);
+    stroke-width: 4px;
+}
+
+.ent .er-diagram .er-small {
+    font-family: var(--font-type);
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    fill: var(--ink-3);
+}
+
+.ent .er-diagram .link {
+    fill: none;
+    stroke: var(--ink-2);
+    stroke-width: 1.5;
+}
+
+.ent .er-diagram .loop text {
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: 17px;
+    fill: #F8F1E1;
+}
+
+.ent .er-diagram .hl {
+    filter: drop-shadow(0 0 4px var(--mustard)) drop-shadow(0 0 8px rgba(221, 162, 44, 0.7));
+}
+
+.ent .er-diagram .link.hl {
+    stroke: var(--red);
+    stroke-width: 2.5;
+}
+
+.ent .er-def {
+    border-top: 1px solid var(--ink);
+    margin: 10px -18px 0;
+    padding: 14px 18px 16px;
+    background: var(--paper);
+    min-height: 78px;
+}
+
+.ent .er-def p {
+    margin: 4px 0 0;
+    max-width: 70ch;
+}
+
+.ent .er-console {
+    margin-top: 0;
+    border-radius: 0 0 6px 6px;
+    border-top: 0;
+}
+
+.ent .er-console #er-year {
+    flex: 1 1 200px;
+    accent-color: var(--red);
+}
+
+.ent .er-play {
+    min-width: 108px;
+    justify-content: center;
+}
+
+.ent .er-year-readout {
+    font-weight: 700;
+    min-width: 72px;
+}
+
+.ent .er-control {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.ent .er-ctl-label {
+    font-family: var(--font-display);
+    font-stretch: 75%;
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.ent .er-charts {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-top: 28px;
+}
+
+.ent .er-chart {
+    margin: 0;
+    border-top: 3px double var(--ink);
+    padding-top: 8px;
+}
+
+.ent .er-chart figcaption {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.ent .er-chart-val {
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.ent .er-chart svg {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.ent .er-chart .grid {
+    stroke: var(--line);
+    stroke-width: 1;
+}
+
+.ent .er-chart .tick {
+    font-family: var(--font-type);
+    font-size: 10px;
+    fill: var(--ink-3);
+}
+
+.ent .er-chart .ghost {
+    fill: none;
+    stroke: var(--ink-3);
+    stroke-width: 1.5;
+    stroke-dasharray: 4 4;
+}
+
+.ent .er-chart .cursor {
+    stroke: var(--red);
+    stroke-width: 1;
+    stroke-dasharray: 2 3;
+}
+
+.ent .er-findings {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+    margin-top: 22px;
+    min-height: 56px;
+}
+
+.ent .er-findings div {
+    background: var(--charcoal);
+    color: #F1E8D3;
+    padding: 10px 14px;
+    border-radius: 3px;
+}
+
+.ent .er-findings .label {
+    color: #A7B3B8;
+    display: block;
+}
+
+.ent .er-findings b {
+    font-size: 18px;
+}
+
+.ent .er-findings .sub {
+    grid-column: 1 / -1;
+    margin: 0;
+    text-align: center;
+}
+
+.ent .er-lessons {
+    margin-top: 44px;
+}
+
+.ent .er-lessons h2 {
+    font-family: var(--font-display);
+    font-stretch: 75%;
+    font-weight: 800;
+    font-size: 28px;
+    text-transform: uppercase;
+    margin: 0 0 12px;
+    padding-bottom: 6px;
+    border-bottom: 3px double var(--ink);
+}
+
+.ent .er-lessons ol {
+    margin: 0;
+    padding-left: 26px;
+    columns: 2;
+    column-gap: 44px;
+}
+
+.ent .er-lessons li {
+    margin-bottom: 10px;
+    break-inside: avoid;
+}
+
+.ent .er-lessons li::marker {
+    font-family: var(--font-type);
+    font-weight: 700;
+    color: var(--red);
+}
+
 /* ---------- Motion preferences ---------- */
 
 @media (prefers-reduced-motion: reduce) {
@@ -1227,6 +1651,15 @@ body {
 
     .ent .floor svg {
         display: none;
+    }
+
+    .ent .er-charts,
+    .ent .er-findings {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .ent .er-lessons ol {
+        columns: 1;
     }
 
     .ent .floor .num b {
@@ -1265,8 +1698,25 @@ body {
     }
 
     .ent .nav a {
-        padding: 8px 7px;
-        font-size: 14px;
+        padding: 8px 5px;
+        font-size: 13px;
+        letter-spacing: 0.08em;
+    }
+
+    .ent .brand-name {
+        display: none;
+    }
+
+    .ent .er-charts {
+        grid-template-columns: 1fr;
+    }
+
+    .ent .er-stage {
+        padding: 8px 8px 0;
+    }
+
+    .ent .er-def {
+        margin: 8px -8px 0;
     }
 
     .ent .hero-panel {

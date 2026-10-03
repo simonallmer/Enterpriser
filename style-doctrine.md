@@ -77,6 +77,18 @@ A **vacuum tube** with a glowing filament, beside the wordmark ENTERPRISER (Arch
 The tube is the machine made visible; its filament is the light going on. The single light bulb is reserved for the
 lights-on/lights-off switch.
 
+## Engine Room (basement)
+
+The machinery under the four floors: interactive system models and Isotype data.
+
+- **Emblem:** the shipping container (1956). Trade flow, a physical product, a standard unit.
+- **System models** follow Donella Meadows' stock-and-flow notation, in colour: tanks (stocks), pipes with
+  faucets (flows), clouds (model edge), thin arrows (information links), red **R** and blue **B** loop markers.
+  Liquid width = flow rate; faucet handles turn with flow. Every part is clickable and explains itself.
+  Models are our own simplifications; we cite the book, never reproduce its figures or text.
+- **Isotype charts** (Otto Neurath): count symbols, never scale them. One symbol = one fixed quantity. The symbol
+  shows the thing counted. Charts stay flat; 3D is reserved for system models you can spin.
+
 ## 5. Illustration
 
 Type and colour carry the system, but **illustration is the soul of this style**. The 1950s look cannot be
