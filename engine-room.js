@@ -85,7 +85,7 @@ window.EngineRoom = (function () {
     const LEARNING_CURVE = [
         { id: 'bicycle-shop', title: 'The Bicycle Shop', text: 'One stock, two balancing loops, then delays. Why the shelf is never quite full, and why reacting faster makes it worse.', open: true },
         { id: 'oil-economy', title: 'The Oil Economy', text: 'A company grows on a resource that never comes back. Set the growth goal, double the oil field, raise the price. Watch where the peak goes.', open: true },
-        { id: 'fishery', title: 'The Fishery', text: 'Capital on a renewable resource. Fish grow back, unless the fleet grows faster.' }
+        { id: 'fishery', title: 'The Fishery', text: 'Capital on a renewable resource. Fish grow back, unless the fleet grows faster. Nets, sonar or trawlers: settle, swing or collapse.', open: true }
     ];
     const PICTURE_STATISTICS = [
         { id: 'square-metre', title: 'One Square Metre', text: 'What does a million buy? Floor space in the ten priciest housing markets, counted in tiles.', open: true }
@@ -318,7 +318,7 @@ window.EngineRoom = (function () {
                 </div>
                 <div class="er-next">
                     <a href="#/engine-room/bicycle-shop" class="er-prev">← Step 1: The Bicycle Shop</a>
-                    <span class="er-soon">Step 3: The Fishery · coming soon</span>
+                    <a href="#/engine-room/fishery" class="btn">Step 3: The Fishery →</a>
                 </div>
                 <p class="er-credit">Model after Donella H. Meadows, <i>Thinking in Systems: A Primer</i> (2008), chapter 2, “A Renewable Stock Constrained by a Nonrenewable Stock.” Parameters and wording are our own simplification.</p>
             </div>`;
@@ -462,8 +462,10 @@ window.EngineRoom = (function () {
         stop();
         close3d();
         if (window.EngineRoomShop) window.EngineRoomShop.stop();
+        if (window.EngineRoomFishery) window.EngineRoomFishery.leave();
         if (parts[1] === 'oil-economy') renderOil(view);
         else if (parts[1] === 'bicycle-shop' && window.EngineRoomShop) window.EngineRoomShop.render(view, H);
+        else if (parts[1] === 'fishery' && window.EngineRoomFishery) window.EngineRoomFishery.render(view, H);
         else if (parts[1] === 'square-metre' && window.EngineRoomSqm) window.EngineRoomSqm.render(view, H);
         else renderHall(view);
     }

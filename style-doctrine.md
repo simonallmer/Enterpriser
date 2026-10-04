@@ -82,7 +82,7 @@ lights-on/lights-off switch.
 The machinery under the four floors, in two separate collections:
 
 - **Learning Curve**: system models in teaching order. Step 1 The Bicycle Shop (one stock, competing balancing
-  loops, delays: the thermostat in business clothes), Step 2 The Oil Economy, Step 3 The Fishery. Each step links
+  loops, delays: the thermostat in business clothes), Step 2 The Oil Economy, Step 3 The Fishery (sea diorama: silver-blue faceted waves, fish and boats counted 1 per 25 units). Each step links
   to the next; each uses everyday business examples rather than abstract ones.
 - **Picture Statistics**: current data counted in symbols (first: One Square Metre). Kept apart from the models.
 

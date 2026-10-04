@@ -19,6 +19,7 @@ The app renders into `#enterpriser` and uses hash routing (`#/`, `#/index`, `#/i
 | `index.html`, `style.css`, `script.js` | The app |
 | `engine-room.js` | Engine Room: interactive system models (oil economy), 2D drawing |
 | `engine-room-shop.js` | Learning Curve step 1: The Bicycle Shop (thermostat, delays) |
+| `engine-room-fishery.js`, `engine-room-fishery-3d.js` | Learning Curve step 3: The Fishery (2D drawing + 3D sea diorama) |
 | `engine-room-sqm.js` | Picture Statistics: One Square Metre (what a million buys) |
 | `engine-room-3d.js` | 3D diorama view of the same model (three.js, loaded on demand) |
 | `data.js` | Hand-curated Index entries |
