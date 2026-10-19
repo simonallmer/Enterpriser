@@ -1,16 +1,16 @@
 // Enterpriser — Articles. Loads after data.js and fills its ENTERPRISER_ARTICLES list.
 // Each article: id (route #/articles/<id>), title, dek, author, date, url, mentions (Index uids), html body.
 // Links inside a body point into the journal: #/machines/<exhibit>, #/index.
-// Draft source of "The Universal Merchant": the Claude Doc of the same name.
+// Draft source of "A Noble Profession": the Claude Doc of the same name.
 
 ENTERPRISER_ARTICLES.push(
     {
-        id: 'universal-merchant',
-        title: 'The Universal Merchant',
+        id: 'a-noble-profession',
+        title: 'A Noble Profession',
         dek: 'From the merchants of Ragusa to the enterprisers of Pittsburgh: the long line of people who connect strangers, and build things that outlast them.',
         author: 'Simon Allmer',
         date: '2026-10-19',
-        url: '#/articles/universal-merchant',
+        url: '#/articles/a-noble-profession',
         mentions: [],
         html: `
             <h2>The most universal of men</h2>

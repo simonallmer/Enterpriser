@@ -238,7 +238,7 @@
                         <p>The tools change. A printer with movable type, a lathe, a 3D printer guided by code. The craft of deciding what to make, and making it well, stays.</p>
                     </div>
                     <div>
-                        <p>The first article is out: <a href="#/articles/universal-merchant">The Universal Merchant</a>. The <a href="#/machines">Machines</a> are ready to teach now: a bicycle shop, an oil economy and a fishery you can run yourself. And the <a href="#/index">Enterpriser Index</a> is open: ${fmt(entries.length)} businesses worldwide, ranked by how long they have lasted.</p>
+                        <p>The first article is out: <a href="#/articles/a-noble-profession">A Noble Profession</a>. The <a href="#/machines">Machines</a> are ready to teach now: a bicycle shop, an oil economy and a fishery you can run yourself. And the <a href="#/index">Enterpriser Index</a> is open: ${fmt(entries.length)} businesses worldwide, ranked by how long they have lasted.</p>
                         <p class="definition"><b>en·ter·pris·er</b> (n.) One who undertakes a business or venture. From Old French <i>entreprendre</i>, “to undertake.”</p>
                     </div>
                 </div>
