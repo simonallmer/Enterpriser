@@ -1,4 +1,4 @@
-// Engine Room — 3D diorama of the fishery (companion to the 2D drawing in engine-room-fishery.js).
+// Machines — 3D diorama of the fishery (companion to the 2D drawing in engine-room-fishery.js).
 // A harbour on a museum turntable: the sea in a glass tank with living waves, fish you can count,
 // boats that bob, spawn rising from the sea floor. Drag to spin, click a part.
 // three.js is loaded on demand from jsDelivr, only when the 3D view is opened.

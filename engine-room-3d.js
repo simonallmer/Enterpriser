@@ -1,4 +1,4 @@
-// Engine Room — 3D diorama of the oil economy (companion to the 2D drawing in engine-room.js).
+// Machines — 3D diorama of the oil economy (companion to the 2D drawing in engine-room.js).
 // A museum turntable: drag to spin, click a part to see what it is.
 // three.js is loaded on demand from jsDelivr, only when the 3D view is opened.
 

@@ -143,8 +143,8 @@
                 </a>
                 <nav class="nav">
                     <a href="#/" data-nav="articles">Articles</a>
+                    <a href="#/machines" data-nav="machines">Machines</a>
                     <a href="#/index" data-nav="index">Index</a>
-                    <a href="#/engine-room" data-nav="engine-room">Engine Room</a>
                 </nav>
                 <button class="lamp" type="button"></button>
                 <a href="https://simonallmer.com" class="back-link" target="_top">Back to SA</a>
@@ -199,13 +199,6 @@
     ];
 
     const PICTO = {
-        hand: `<svg viewBox="0 0 96 72" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <rect x="6" y="58" width="30" height="8" rx="2"/><circle cx="21" cy="54" r="4"/><path d="M21 54 L40 26"/><circle cx="40" cy="26" r="4"/>
-                <path d="M40 26 L66 20"/><path d="M66 20 l10 -8 M66 20 l12 4"/><circle cx="84" cy="44" r="7" fill="currentColor" opacity=".25"/></svg>`,
-        gear: `<svg viewBox="0 0 96 72" fill="none" stroke="currentColor" stroke-linecap="round" aria-hidden="true">
-                <circle cx="34" cy="36" r="19" stroke-width="9" stroke-dasharray="6 4.6"/><circle cx="34" cy="36" r="7" stroke-width="3"/>
-                <circle cx="70" cy="24" r="11" stroke-width="7" stroke-dasharray="4.4 3.6"/><circle cx="70" cy="24" r="3.5" stroke-width="3"/>
-                <path d="M4 66 H92" stroke-width="3"/></svg>`,
         plan: `<svg viewBox="0 0 96 72" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true">
                 <rect x="8" y="8" width="80" height="56" rx="2" stroke-width="3"/>
                 <path d="M8 24 H88 M8 40 H88 M28 8 V64 M48 8 V64 M68 8 V64" opacity=".3"/>
@@ -235,51 +228,48 @@
 
                 <div class="ad-copy">
                     <div>
-                        <p class="lead">Machines are getting hands. What will you build with them?</p>
-                        <p>Enterpriser is a journal for people who make things. Not valuations. Not IPOs. Not who got rich. We write about what gets built, how it gets built, and why some of it lasts for centuries.</p>
+                        <p class="lead">What will still be true in twenty-five years?</p>
+                        <p>Enterpriser is a journal for people who make things. We write about the lasting craft of building: how a good thing gets made, and how it is made to last.</p>
                     </div>
                     <div>
-                        <p>When a robot can carve, weld and assemble, the old questions fade. How to run a meeting matters less. What to make, and how well, matters more.</p>
-                        <p>So we go where things are made: the workshop, the factory floor, the drawing board. Short sentences. Clear steps. Real plans.</p>
+                        <p>Each author writes in their own way. Every article shares one test: it should still be worth reading in twenty-five years.</p>
+                        <p>The tools change. A printer with movable type, a lathe, a 3D printer guided by code. The craft of deciding what to make, and making it well, stays.</p>
                     </div>
                     <div>
-                        <p>The first articles arrive soon. Until then, the <a href="#/index">Enterpriser Index</a> is open: ${fmt(entries.length)} businesses worldwide, ranked by how long they have lasted. Find it any time in the menu above.</p>
+                        <p>The first articles arrive soon. The <a href="#/machines">Machines</a> are ready to teach now: a bicycle shop, an oil economy and a fishery you can run yourself. And the <a href="#/index">Enterpriser Index</a> is open: ${fmt(entries.length)} businesses worldwide, ranked by how long they have lasted.</p>
                         <p class="definition"><b>en·ter·pris·er</b> (n.) One who undertakes a business or venture. From Old French <i>entreprendre</i>, “to undertake.”</p>
                     </div>
                 </div>
 
                 <div class="section-head">
-                    <span class="label">The building</span>
-                    <h2>Four floors and an Engine Room</h2>
-                    <p>Every article lives on one floor. The machinery runs in the basement.</p>
+                    <span class="label">The journal</span>
+                    <h2>Read it. Run it. Check it.</h2>
+                    <p>Three ways into the same question: how do you build something that lasts?</p>
                 </div>
 
                 <div class="building">
-                    ${[
-                        [4, 'Machines', 'What can you craft with the hands of a machine? Robots, tools and the new workshop.', 'var(--blue)', 'hand'],
-                        [3, 'The Factory Floor', 'How things really get made. We ask the mechanics first, then the designers.', 'var(--red)', 'gear'],
-                        [2, 'Concrete Plans', 'Bold, specific proposals. A tube system for a new district. Steps included.', 'var(--teal)', 'plan'],
-                        [1, 'Lessons from Enterprisers', 'People who built something tell what worked, and what broke. Bankruptcy included.', 'var(--mustard)', 'lamp']
-                    ].map(([n, title, text, color, icon]) => `
-                        <div class="floor" style="--floor:${color}">
-                            <div class="num"><b>${n}</b>Floor</div>
-                            <div><h3>${title}</h3><p>${text}</p></div>
-                            <span style="color:${color}">${PICTO[icon]}</span>
-                        </div>`).join('')}
-                    <a class="floor basement" href="#/engine-room" style="--floor:var(--midnight)">
-                        <div class="num"><b>B</b>Basement</div>
-                        <div><h3>Engine Room →</h3><p>How systems behave. Stocks, flows and feedback loops, built as machines you can run.</p></div>
-                        <span class="basement-icon">${window.EngineRoom.CONTAINER}</span>
+                    <div class="floor" style="--floor:var(--mustard)">
+                        <div class="num"><b>1</b>Read it</div>
+                        <div><h3>Articles</h3><p>Writing meant to last. How things get made, bold plans, and builders on what worked and what broke.</p></div>
+                        <span style="color:var(--mustard)">${PICTO.plan}</span>
+                    </div>
+                    <a class="floor link" href="#/machines" style="--floor:var(--blue)">
+                        <div class="num"><b>2</b>Run it</div>
+                        <div><h3>Machines →</h3><p>How systems behave. Stocks, flows and feedback loops you can set running, and statistics you count by eye.</p></div>
+                        <span class="machine-icon">${window.EngineRoom.CONTAINER}</span>
+                    </a>
+                    <a class="floor link" href="#/index" style="--floor:var(--red)">
+                        <div class="num"><b>3</b>Check it</div>
+                        <div><h3>Index →</h3><p>${fmt(entries.length)} businesses, ranked by how long they last. Test any idea against centuries of the record.</p></div>
+                        <span style="color:var(--red)">${PICTO.lamp}</span>
                     </a>
                 </div>
-
-                <p class="not-here">Not on any floor: <s>rich lists</s><span class="ticks">///</span><s>IPO playbooks</s><span class="ticks">///</span><s>office politics</s></p>
 
                 <section class="notice">
                     <div>
                         <span class="label">Now open</span>
                         <h2>The Enterpriser Index</h2>
-                        <p>${fmt(entries.length)} businesses from ${countries} countries. The oldest, ${esc(oldest.label)}, has been building since ${yearLabel(oldest.founded.year)}. Ranked by how long they last, not by how much they earn.</p>
+                        <p>${fmt(entries.length)} businesses from ${countries} countries. The oldest, ${esc(oldest.label)}, has been building since ${yearLabel(oldest.founded.year)}. Ranked by how long they have lasted.</p>
                     </div>
                     <a class="btn" href="#/index">Open the Index →</a>
                 </section>
@@ -537,10 +527,11 @@
 
     function route() {
         const parts = location.hash.replace(/^#\/?/, '').split('/').filter(Boolean);
-        const section = ['index', 'engine-room'].includes(parts[0]) ? parts[0] : 'articles';
+        if (parts[0] === 'engine-room') { location.replace('#/' + ['machines', ...parts.slice(1)].join('/')); return; }
+        const section = ['index', 'machines'].includes(parts[0]) ? parts[0] : 'articles';
         root.querySelectorAll('[data-nav]').forEach(a => a.classList.toggle('active', a.dataset.nav === section));
 
-        if (section === 'engine-room') window.EngineRoom.render(view, parts, { esc, fmt, bulb, dot });
+        if (section === 'machines') window.EngineRoom.render(view, parts, { esc, fmt, bulb, dot });
         else if (section === 'index' && parts[1]) renderEntry(decodeURIComponent(parts[1]));
         else if (section === 'index') renderIndex();
         else renderArticles();

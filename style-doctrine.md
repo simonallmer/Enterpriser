@@ -77,9 +77,9 @@ A **vacuum tube** with a glowing filament, beside the wordmark ENTERPRISER (Arch
 The tube is the machine made visible; its filament is the light going on. The single light bulb is reserved for the
 lights-on/lights-off switch.
 
-## Engine Room (basement)
+## Machines
 
-The machinery under the four floors, in two separate collections:
+The third section, after Articles and the Index (read it, check it, run it). Two separate collections:
 
 - **Learning Curve**: system models in teaching order. Step 1 The Bicycle Shop (one stock, competing balancing
   loops, delays: the thermostat in business clothes), Step 2 The Oil Economy, Step 3 The Fishery (sea diorama: silver-blue faceted waves, fish and boats counted 1 per 25 units). Each step links
@@ -106,7 +106,7 @@ saturated colour, people and machines at work).
 First commissions:
 1. **"The Enterpriser's Studio"**: masthead illustration. A robot craftsman at a workbench under a skylight,
    shaping an object; city rooftops outside. Our own composition, not a copy of the reference.
-2. **Department vignettes** (one per floor): a planning table, a factory floor, a machine's hand, an enterpriser's workshop.
+2. **Section vignettes** (one each for Articles, Index, Machines): a drawing board, a wall of lamps, a running machine.
 3. **Index cutaways**: one cutaway drawing per featured company, showing how its product is made.
 
 ## 6. Voice

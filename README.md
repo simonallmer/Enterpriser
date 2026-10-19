@@ -10,14 +10,14 @@ Static site, no build step. Serve the folder and open `index.html`:
 python3 -m http.server 8742
 ```
 
-The app renders into `#enterpriser` and uses hash routing (`#/`, `#/index`, `#/index/<uid>`, `#/engine-room`, `#/engine-room/<exhibit>`), so it can be embedded via iframe.
+The app renders into `#enterpriser` and uses hash routing (`#/`, `#/index`, `#/index/<uid>`, `#/machines`, `#/machines/<exhibit>`; old `#/engine-room` links redirect), so it can be embedded via iframe.
 
 ## Files
 
 | File | Purpose |
 |---|---|
 | `index.html`, `style.css`, `script.js` | The app |
-| `engine-room.js` | Engine Room: interactive system models (oil economy), 2D drawing |
+| `engine-room.js` | Machines: interactive system models (oil economy), 2D drawing |
 | `engine-room-shop.js` | Learning Curve step 1: The Bicycle Shop (thermostat, delays) |
 | `engine-room-fishery.js`, `engine-room-fishery-3d.js` | Learning Curve step 3: The Fishery (2D drawing + 3D sea diorama) |
 | `engine-room-sqm.js` | Picture Statistics: One Square Metre (what a million buys) |

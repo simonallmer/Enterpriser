@@ -1,4 +1,4 @@
-// Engine Room — Learning Curve, Step 1: The Bicycle Shop.
+// Machines — Learning Curve, Step 1: The Bicycle Shop.
 // A thermostat in business clothes: one stock (bikes on the floor), two competing balancing loops
 // (sales drain it, reorders refill it), then delays. Structure after Donella H. Meadows,
 // "Thinking in Systems" (2008), ch. 2 (thermostat; business inventory). Example, numbers and wording are our own.
@@ -202,7 +202,7 @@ window.EngineRoomShop = (function () {
         idx = 0;
         view.innerHTML = `
             <div class="wrap">
-                <a class="crumb" href="#/engine-room">← Engine Room</a>
+                <a class="crumb" href="#/machines">← Machines</a>
                 <div class="er-title">
                     <span class="label">Learning Curve · Step 1</span>
                     <h1>Why is the shelf never <u>full</u>?</h1>
@@ -244,7 +244,7 @@ window.EngineRoomShop = (function () {
                 </div>
 
                 <div class="er-next">
-                    <a href="#/engine-room/oil-economy" class="btn">Step 2: The Oil Economy →</a>
+                    <a href="#/machines/oil-economy" class="btn">Step 2: The Oil Economy →</a>
                 </div>
                 <p class="er-credit">Structure after Donella H. Meadows, <i>Thinking in Systems: A Primer</i> (2008), chapter 2: the thermostat and business inventory. The bicycle shop, numbers and wording are our own.</p>
             </div>`;

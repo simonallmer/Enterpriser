@@ -533,17 +533,6 @@ body {
     justify-self: end;
 }
 
-.ent .not-here {
-    text-align: center;
-    padding: 28px 0 0;
-    color: var(--ink-2);
-    font-size: 16px;
-}
-
-.ent .not-here s {
-    color: var(--ink-3);
-}
-
 /* ---------- Articles: notice box ---------- */
 
 .ent .notice {
@@ -1194,25 +1183,25 @@ body {
     font-style: italic;
 }
 
-/* ---------- Engine Room ---------- */
+/* ---------- Machines ---------- */
 
-.ent .floor.basement {
+.ent .floor.link {
     text-decoration: none;
     background: var(--paper-2);
     border-style: dashed;
     transition: transform 0.15s;
 }
 
-.ent .floor.basement:hover {
+.ent .floor.link:hover {
     transform: translateY(-2px);
 }
 
-.ent .basement-icon {
+.ent .machine-icon {
     justify-self: end;
     color: var(--ink);
 }
 
-.ent .basement-icon svg {
+.ent .machine-icon svg {
     width: 104px;
     height: 52px;
 }

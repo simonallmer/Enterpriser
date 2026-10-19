@@ -1,4 +1,4 @@
-// Engine Room — Picture Statistics: One Square Metre.
+// Machines — Picture Statistics: One Square Metre.
 // "What does a million buy?" Floor space for one million in the priciest housing markets, counted in tiles.
 // Rule: count symbols, never scale them. One tile = 1 m² (or 10 ft²), grouped in tens.
 
@@ -64,7 +64,7 @@ window.EngineRoomSqm = (function () {
         H = helpers;
         view.innerHTML = `
             <div class="wrap">
-                <a class="crumb" href="#/engine-room">← Engine Room</a>
+                <a class="crumb" href="#/machines">← Machines</a>
                 <div class="er-title">
                     <span class="label">Picture Statistics · One Square Metre</span>
                     <h1>What does a <u>million</u> buy?</h1>
@@ -97,7 +97,7 @@ window.EngineRoomSqm = (function () {
                 </div>
 
                 <div class="er-next">
-                    <a href="#/engine-room" class="er-prev">← Engine Room</a>
+                    <a href="#/machines" class="er-prev">← Machines</a>
                 </div>
             </div>`;
 

@@ -1,4 +1,4 @@
-// Engine Room — Learning Curve, Step 3: The Fishery.
+// Machines — Learning Curve, Step 3: The Fishery.
 // Capital (a fishing fleet) constrained by a renewable resource (fish that breed).
 // Structure after Donella H. Meadows, "Thinking in Systems" (2008), ch. 2 and appendix (Figs 42–45).
 // Curve shapes, the quota lever, numbers and wording are our own.
@@ -208,7 +208,7 @@ window.EngineRoomFishery = (function () {
         idx = 0;
         view.innerHTML = `
             <div class="wrap">
-                <a class="crumb" href="#/engine-room">← Engine Room</a>
+                <a class="crumb" href="#/machines">← Machines</a>
                 <div class="er-title">
                     <span class="label">Learning Curve · Step 3</span>
                     <h1>Can the fish <u>outlast</u> the fleet?</h1>
@@ -259,7 +259,7 @@ window.EngineRoomFishery = (function () {
                 </div>
 
                 <div class="er-next">
-                    <a href="#/engine-room/oil-economy" class="er-prev">← Step 2: The Oil Economy</a>
+                    <a href="#/machines/oil-economy" class="er-prev">← Step 2: The Oil Economy</a>
                 </div>
                 <p class="er-credit">Model after Donella H. Meadows, <i>Thinking in Systems: A Primer</i> (2008), chapter 2, “Renewable Stock Constrained by a Renewable Stock.” Curve shapes, the quota, parameters and wording are our own simplification.</p>
             </div>`;

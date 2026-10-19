@@ -1,6 +1,6 @@
-// Engine Room — interactive system models. Rendered by script.js at:
-//   #/engine-room             exhibit hall
-//   #/engine-room/<exhibit>   one exhibit
+// Machines — interactive system models. Rendered by script.js at:
+//   #/machines             exhibit hall
+//   #/machines/<exhibit>   one exhibit
 // Models follow Donella H. Meadows, "Thinking in Systems" (2008), ch. 2. Explanations are our own.
 
 window.EngineRoom = (function () {
@@ -92,12 +92,12 @@ window.EngineRoom = (function () {
     ];
 
     const card = (x, label) => `
-        <${x.open ? `a href="#/engine-room/${x.id}"` : 'div'} class="exhibit ${x.open ? 'open' : 'soon'}">
+        <${x.open ? `a href="#/machines/${x.id}"` : 'div'} class="exhibit ${x.open ? 'open' : 'soon'}">
             <span class="exhibit-lamp">${H.bulb(!!x.open)}</span>
             <span class="label">${label}${x.open ? '' : ' · Coming soon'}</span>
             <h2>${H.esc(x.title)}</h2>
             <p>${H.esc(x.text)}</p>
-            ${x.open ? '<span class="exhibit-go">Step inside →</span>' : ''}
+            ${x.open ? '<span class="exhibit-go">Run it →</span>' : ''}
         </${x.open ? 'a' : 'div'}>`;
 
     // ---------- Exhibit hall ----------
@@ -107,9 +107,9 @@ window.EngineRoom = (function () {
             <div class="wrap">
                 <div class="er-head">
                     <div class="er-emblem">${CONTAINER}</div>
-                    <span class="label">Basement</span>
-                    <h1>Engine Room</h1>
-                    <p>Below the floors, the machinery. Systems you can run: tanks you can fill, faucets you can open, loops you can watch. Click any term to see what it means.</p>
+                    <span class="label">Run it</span>
+                    <h1>Machines</h1>
+                    <p>Ideas built as machines you can run: tanks you can fill, faucets you can open, loops you can watch. Click any term to see what it means.</p>
                 </div>
 
                 <section class="er-section">
@@ -265,7 +265,7 @@ window.EngineRoom = (function () {
         idx = 0;
         view.innerHTML = `
             <div class="wrap">
-                <a class="crumb" href="#/engine-room">← Engine Room</a>
+                <a class="crumb" href="#/machines">← Machines</a>
                 <div class="er-title">
                     <span class="label">Learning Curve · Step 2</span>
                     <h1>Does the oil field <u>last</u>?</h1>
@@ -317,8 +317,8 @@ window.EngineRoom = (function () {
                     </ol>
                 </div>
                 <div class="er-next">
-                    <a href="#/engine-room/bicycle-shop" class="er-prev">← Step 1: The Bicycle Shop</a>
-                    <a href="#/engine-room/fishery" class="btn">Step 3: The Fishery →</a>
+                    <a href="#/machines/bicycle-shop" class="er-prev">← Step 1: The Bicycle Shop</a>
+                    <a href="#/machines/fishery" class="btn">Step 3: The Fishery →</a>
                 </div>
                 <p class="er-credit">Model after Donella H. Meadows, <i>Thinking in Systems: A Primer</i> (2008), chapter 2, “A Renewable Stock Constrained by a Nonrenewable Stock.” Parameters and wording are our own simplification.</p>
             </div>`;
