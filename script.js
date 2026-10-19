@@ -283,7 +283,8 @@
     const dateLabel = iso => new Date(iso + 'T00:00:00').toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
 
     function renderArticleList() {
-        const list = [...ARTICLES].sort((a, b) => b.date.localeCompare(a.date));
+        // Newest first; on the same date, the later entry in articles.js comes first
+        const list = [...ARTICLES].reverse().sort((a, b) => b.date.localeCompare(a.date));
         view.innerHTML = `
             <div class="wrap">
                 <div class="er-head">

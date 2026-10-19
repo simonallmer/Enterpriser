@@ -2215,3 +2215,33 @@ body {
 .ent .article-item:hover h2 {
     color: var(--red);
 }
+
+.ent .article-body figure {
+    margin: 8px 0 20px;
+}
+
+.ent .article-body figure img {
+    display: block;
+    width: 100%;
+    max-width: 560px;
+    height: auto;
+    margin: 0 auto;
+    border: 1px solid var(--ink);
+}
+
+.ent .article-body .power-def {
+    font-size: 21px;
+    line-height: 1.45;
+    font-style: italic;
+    border-left: 3px solid var(--mustard);
+    padding-left: 20px;
+}
+
+.ent .article-body .power-ex {
+    font-family: var(--font-type);
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--red);
+    margin-bottom: 6px;
+}

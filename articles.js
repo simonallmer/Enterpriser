@@ -43,3 +43,65 @@ ENTERPRISER_ARTICLES.push(
             <p class="definition"><b>en·ter·pris·er</b> (n.) One who undertakes a business or venture. From Old French <i>entreprendre</i>, “to undertake.”</p>`
     }
 );
+
+ENTERPRISER_ARTICLES.push(
+    {
+        id: 'seven-powers',
+        title: 'The Seven Powers',
+        dek: 'Why some businesses last: Hamilton Helmer\'s seven sources of enduring advantage, each with one example.',
+        author: 'Simon Allmer',
+        date: '2026-10-19',
+        url: '#/articles/seven-powers',
+        mentions: ['ent-sp-amzn', 'ent-0012-toyota'],
+        html: `
+            <p>Some businesses outlast their founders, their products and their century. The strategist Hamilton Helmer spent decades asking why. His answer, set out in <i>7 Powers: The Foundations of Business Strategy</i>, is that a lasting business holds at least one of seven powers.</p>
+            <p>Each power has two halves. A benefit, which lets the business make something better or cheaper. And a barrier, which keeps rivals from simply copying it. A benefit alone is soon imitated, and a barrier alone guards nothing worth having. Together they let a good thing last, which is the same question the <a href="#/index">Index</a> asks of every company.</p>
+            <p>Here are the seven, each in Helmer's own definition, with one example.</p>
+
+            <h2>1. Scale Economies</h2>
+            <figure><img src="images/seven-powers/1-scale-economies.jpg" alt="Container cranes over a Maersk ship. 1. Scale Economies." width="1200" height="1200" loading="lazy"></figure>
+            <p class="power-def">A business in which per unit cost declines as production volume increases.</p>
+            <p class="power-ex">Example: Maersk</p>
+            <p>Many costs of a voyage, the crew, the port call, the route, barely change with the size of the ship. In 2013 Maersk launched its Triple-E class, among the largest container ships afloat, and spread each voyage across more boxes than smaller rivals could carry. Its own terminals extend the same advantage on land.</p>
+
+            <h2>2. Network Economies</h2>
+            <figure><img src="images/seven-powers/2-network-economies.jpg" alt="Lit office windows at night. 2. Network Economies." width="1200" height="1200" loading="lazy"></figure>
+            <p class="power-def">A business in which the value realized by a customer increases as the installed base increases.</p>
+            <p class="power-ex">Example: Slack</p>
+            <p>Slack is worth little to a team of one. Each colleague who joins a workspace makes it more useful to everyone already there, and Slack Connect extends the pull to partners in other companies. It is a reinforcing loop, the same kind that grows capital in <a href="#/machines/oil-economy">The Oil Economy</a>. Once a whole company talks in Slack, a rival must win over everyone at once.</p>
+
+            <h2>3. Counter-Positioning</h2>
+            <figure><img src="images/seven-powers/3-counter-positioning.jpg" alt="Aisles of books in an Amazon warehouse. 3. Counter-Positioning." width="1200" height="1200" loading="lazy"></figure>
+            <p class="power-def">A newcomer adopts a new, superior business model which the incumbent does not mimic due to anticipated damage to their existing business.</p>
+            <p class="power-ex">Example: Amazon</p>
+            <p>Amazon began in 1995 as a bookshop without shops. With no stores to stock, it could offer millions of titles at lower prices. Barnes &amp; Noble and Borders could see the model, but going fully online meant undercutting the stores that earned their living. Borders even handed its website to Amazon for seven years.</p>
+
+            <h2>4. Switching Costs</h2>
+            <figure><img src="images/seven-powers/4-switching-costs.jpg" alt="Coloured coffee capsules around a bowl of beans. 4. Switching Costs." width="1200" height="1200" loading="lazy"></figure>
+            <p class="power-def">The value loss expected by a customer that would be incurred from switching to an alternate supplier for additional purchases.</p>
+            <p class="power-ex">Example: Nespresso</p>
+            <p>A Nespresso machine brews only capsules made to fit it, and for years, while Nestlé's patents held, that meant Nespresso's own. A customer who wants to change must buy a new machine and give up a taste they know. So most keep buying the capsules.</p>
+
+            <h2>5. Branding</h2>
+            <figure><img src="images/seven-powers/5-branding.jpg" alt="A De Beers store interior. 5. Branding." width="1200" height="1200" loading="lazy"></figure>
+            <p class="power-def">The durable attribution of higher value to an objectively identical offering that arises from historical information about the seller.</p>
+            <p class="power-ex">Example: De Beers</p>
+            <p>Stone for stone, a diamond from De Beers is the same carbon as any other. Since 1947 the line “A Diamond Is Forever” has taught generations that a diamond stands for a promise. The De Beers name, built since 1888, carries that history into every sale.</p>
+
+            <h2>6. Cornered Resource</h2>
+            <figure><img src="images/seven-powers/6-cornered-resource.jpg" alt="A Formula One car racing through Monaco. 6. Cornered Resource." width="1200" height="1200" loading="lazy"></figure>
+            <p class="power-def">Preferential access at attractive terms to a coveted asset that can independently enhance value.</p>
+            <p class="power-ex">Example: Formula One</p>
+            <p>Formula One holds the commercial rights to the FIA Formula One World Championship under an agreement that runs for a hundred years, from 2011 to 2110. Anyone who wants the pinnacle of motor racing, its teams, its circuits from Monaco to Monza and its worldwide audience, must deal with Formula One.</p>
+
+            <h2>7. Process Power</h2>
+            <figure><img src="images/seven-powers/7-process-power.jpg" alt="Robots welding car bodies on a Toyota line. 7. Process Power." width="1200" height="1200" loading="lazy"></figure>
+            <p class="power-def">Embedded company organization and activity sets which enable lower costs and/or superior product, and which can be matched only by an extended commitment.</p>
+            <p class="power-ex">Example: Toyota</p>
+            <p>Toyota's lean manufacturing system (kaizen, kanban, andon cords and just-in-time production) gave it a sustained cost and quality advantage. Its processes were refined over decades and are incredibly hard to replicate effectively.</p>
+
+            <h2>Which do you hold?</h2>
+            <p>The oldest businesses in the <a href="#/index">Index</a> rarely rely on one power alone. A name built over generations, a process no rival has the patience to copy. Ask of your own work which of the seven it holds today, and which it could build.</p>
+            <p class="definition">Source: Hamilton Helmer, <i>7 Powers: The Foundations of Business Strategy</i> (2016).</p>`
+    }
+);
