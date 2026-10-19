@@ -119,19 +119,19 @@ ENTERPRISER_ARTICLES.push(
 
 ENTERPRISER_ARTICLES.push(
     {
-        id: 'getting-things-done',
-        title: 'Getting Things Done',
+        id: 'get-things-done',
+        title: 'Get Things Done',
         dek: 'A clear head is a builder\'s first tool. David Allen\'s workflow, four properties every project should define, and a machine to try it on your own list.',
         author: 'Simon Allmer',
         date: '2026-10-20',
-        url: '#/articles/getting-things-done',
+        url: '#/articles/get-things-done',
         mentions: [],
         html: `
             <p>Every builder carries more than they can hold. Orders, ideas, promises, a door that squeaks. In <i>Getting Things Done</i>, first published in 2001, David Allen argued that the mind is for having ideas, not for holding them. Get everything out of your head, decide what each thing is, and keep it where you will see it at the right moment.</p>
             <p>His method has five steps: capture, clarify, organize, reflect, engage. The machine below runs the middle of it. Write down whatever is on your mind, then walk each item down the workflow until it lands where it belongs.</p>
 
-            <div class="article-machine" data-machine="getting-things-done"></div>
-            <p class="power-ex"><a href="#/machines/getting-things-done">Open the machine on its own page →</a></p>
+            <div class="article-machine" data-machine="get-things-done"></div>
+            <p class="power-ex"><a href="#/machines/get-things-done">Open the machine on its own page →</a></p>
 
             <h2>The two questions</h2>
             <p>Everything turns on two questions. <b>Is it actionable?</b> If not, it goes in the trash, on a Someday / Maybe list, or into reference. If it is, <b>what's the next action?</b> Not “the catalogue,” but “call the printer about paper samples.” A next action is something you could do right now, with your hands.</p>

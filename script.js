@@ -324,8 +324,8 @@
                     <div class="article-body">${a.html}</div>
                 </article>
             </div>`;
-        // Machines embedded in an article: <div data-machine="getting-things-done"></div>
-        view.querySelectorAll('[data-machine="getting-things-done"]').forEach(el => window.EngineRoomGtd && window.EngineRoomGtd.mount(el, { esc, fmt, bulb, dot }));
+        // Machines embedded in an article: <div data-machine="get-things-done"></div>
+        view.querySelectorAll('[data-machine="get-things-done"]').forEach(el => window.EngineRoomGtd && window.EngineRoomGtd.mount(el, { esc, fmt, bulb, dot }));
     }
 
     // ---------- Index ----------

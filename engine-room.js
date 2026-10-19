@@ -88,7 +88,7 @@ window.EngineRoom = (function () {
         { id: 'fishery', title: 'The Fishery', text: 'Capital on a renewable resource. Fish grow back, unless the fleet grows faster. Nets, sonar or trawlers: settle, swing or collapse.', open: true }
     ];
     const WORKBENCH = [
-        { id: 'getting-things-done', title: 'Getting Things Done', text: 'Bring what is on your mind. Each item walks the workflow until it lands where it belongs: done, delegated, scheduled or a next action.', open: true }
+        { id: 'get-things-done', title: 'Get Things Done', text: 'Bring what is on your mind. Each item walks the workflow until it lands where it belongs: done, delegated, scheduled or a next action.', open: true }
     ];
     const PICTURE_STATISTICS = [
         { id: 'square-metre', title: 'One Square Metre', text: 'What does a million buy? Floor space in the ten priciest housing markets, counted in tiles.', open: true }
@@ -480,7 +480,7 @@ window.EngineRoom = (function () {
         if (parts[1] === 'oil-economy') renderOil(view);
         else if (parts[1] === 'bicycle-shop' && window.EngineRoomShop) window.EngineRoomShop.render(view, H);
         else if (parts[1] === 'fishery' && window.EngineRoomFishery) window.EngineRoomFishery.render(view, H);
-        else if (parts[1] === 'getting-things-done' && window.EngineRoomGtd) window.EngineRoomGtd.render(view, H);
+        else if (parts[1] === 'get-things-done' && window.EngineRoomGtd) window.EngineRoomGtd.render(view, H);
         else if (parts[1] === 'square-metre' && window.EngineRoomSqm) window.EngineRoomSqm.render(view, H);
         else renderHall(view);
     }

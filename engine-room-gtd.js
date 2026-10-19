@@ -1,8 +1,8 @@
-// Machines — Workbench: Getting Things Done.
+// Machines — Workbench: Get Things Done.
 // Bring whatever is on your mind; the machine walks each item down David Allen's workflow
 // (Getting Things Done, 2001) until it lands in the right place. Projects get the four
-// properties from the article "Getting Things Done": Vision, Purpose, Principles, Technical Insight.
-// Standalone at #/machines/getting-things-done; embedded in the article via mount().
+// properties from the article "Get Things Done": Vision, Purpose, Principles, Technical Insight.
+// Standalone at #/machines/get-things-done; embedded in the article via mount().
 // Everything you type stays in this browser (localStorage), nowhere else.
 
 window.EngineRoomGtd = (function () {
@@ -84,7 +84,7 @@ window.EngineRoomGtd = (function () {
 
     function drawing() {
         const lit = cur ? LIT[cur.step] : (S.inbox.length ? 'in' : null);
-        return `<svg class="gtd-chart" viewBox="0 0 760 640" role="img" aria-label="Getting Things Done workflow: from the IN tray through What is it, Is it actionable and What's the next action, to Trash, Someday, Reference, Projects, Done, Waiting For, Calendar and Next Actions">
+        return `<svg class="gtd-chart" viewBox="0 0 760 640" role="img" aria-label="Get Things Done workflow: from the IN tray through What is it, Is it actionable and What's the next action, to Trash, Someday, Reference, Projects, Done, Waiting For, Calendar and Next Actions">
             <defs><marker id="gtd-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="var(--ink-2)"/></marker></defs>
             ${EDGES.map(([d, label, lx, ly, dashed]) => `
                 <path class="gtd-edge${dashed ? ' dashed' : ''}" d="${d}" marker-end="url(#gtd-arrow)"/>
@@ -307,7 +307,7 @@ window.EngineRoomGtd = (function () {
             <div class="wrap">
                 <a class="crumb" href="#/machines">← Machines</a>
                 <div class="er-title">
-                    <span class="label">Workbench · Getting Things Done</span>
+                    <span class="label">Workbench · Get Things Done</span>
                     <h1>What’s the <u>next action</u>?</h1>
                     <p>Bring whatever is on your mind. The machine walks each item down the workflow until it lands where it belongs, and your head is free for the work itself.</p>
                 </div>
@@ -323,7 +323,7 @@ window.EngineRoomGtd = (function () {
                     </ol>
                 </div>
                 <div class="er-next">
-                    <a href="#/articles/getting-things-done" class="btn">Read the article →</a>
+                    <a href="#/articles/get-things-done" class="btn">Read the article →</a>
                 </div>
                 <p class="er-credit">Workflow after David Allen, <i>Getting Things Done: The Art of Stress-Free Productivity</i> (2001; revised 2015). Drawing, wording and the four project properties are our own.</p>
             </div>`;
