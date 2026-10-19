@@ -2245,3 +2245,340 @@ body {
     color: var(--red);
     margin-bottom: 6px;
 }
+
+.ent .article-body .power-list {
+    margin: 0 0 16px;
+    padding-left: 0;
+    list-style: none;
+    counter-reset: power;
+    border-top: 1px solid var(--line);
+}
+
+.ent .article-body .power-list li {
+    counter-increment: power;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--line);
+    font-family: var(--font-display);
+    font-stretch: 75%;
+    font-weight: 800;
+    font-size: 20px;
+    text-transform: uppercase;
+}
+
+.ent .article-body .power-list li::before {
+    content: counter(power) ".";
+    display: inline-block;
+    width: 2em;
+    color: var(--mustard);
+}
+
+/* ---------- Machines: Getting Things Done ---------- */
+
+.ent .gtd-capture {
+    margin: 24px 0 18px;
+}
+
+.ent .gtd-capture input {
+    flex: 1 1 240px;
+    min-width: 0;
+    font-family: var(--font-type);
+    font-size: 16px;
+    padding: 8px 10px;
+    border: 1px solid #6D787C;
+    border-radius: 4px;
+    background: #FBF7EC;
+    color: #1E2023;
+}
+
+.ent .gtd-capture .label {
+    color: #1E2023;
+}
+
+.ent .gtd-body {
+    display: grid;
+    grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+    gap: 24px;
+    align-items: start;
+}
+
+.ent .gtd-chart {
+    display: block;
+    width: 100%;
+    height: auto;
+    background: var(--card);
+    border: 1px solid var(--ink);
+}
+
+.ent .gtd-edge {
+    fill: none;
+    stroke: var(--ink-2);
+    stroke-width: 1.6;
+}
+
+.ent .gtd-edge.dashed {
+    stroke-dasharray: 5 5;
+}
+
+.ent .gtd-edge-label {
+    font-family: var(--font-type);
+    font-size: 12px;
+    fill: var(--ink-3);
+}
+
+.ent .gtd-node rect {
+    fill: var(--paper);
+    stroke: var(--ink);
+    stroke-width: 1.5;
+}
+
+.ent .gtd-node text {
+    font-family: var(--font-display);
+    font-stretch: 75%;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 0.04em;
+    text-anchor: middle;
+    fill: var(--ink);
+}
+
+.ent .gtd-node.bin rect {
+    fill: var(--paper-2);
+}
+
+.ent .gtd-node.bin {
+    cursor: pointer;
+}
+
+.ent .gtd-node.bin:hover rect,
+.ent .gtd-node.bin:focus rect {
+    stroke: var(--red);
+    stroke-width: 2.5;
+    outline: none;
+}
+
+.ent .gtd-node.key rect {
+    fill: var(--blue);
+    stroke: var(--blue);
+}
+
+.ent .gtd-node.key text {
+    fill: #FBF7EC;
+}
+
+.ent .gtd-node.tray rect {
+    fill: var(--ink);
+}
+
+.ent .gtd-node.tray text {
+    fill: var(--paper);
+}
+
+.ent .gtd-node.on rect {
+    fill: #F7E58A;
+    stroke: #DDA22C;
+    stroke-width: 3;
+    filter: drop-shadow(0 0 6px rgba(247, 229, 138, 0.9));
+}
+
+.ent .gtd-node.on text {
+    fill: #1E2023;
+}
+
+.ent .gtd-step {
+    background: var(--card);
+    border: 1px solid var(--ink);
+    padding: 18px;
+    clip-path: polygon(18px 0, 100% 0, 100% 100%, 0 100%, 0 18px);
+}
+
+.ent .gtd-step h3 {
+    font-family: var(--font-display);
+    font-stretch: 75%;
+    font-weight: 800;
+    font-size: 24px;
+    text-transform: uppercase;
+    margin: 6px 0 8px;
+}
+
+.ent .gtd-step p {
+    margin: 8px 0 12px;
+    font-size: 15px;
+}
+
+.ent .gtd-step .keys {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.ent .gtd-item {
+    font-family: var(--font-display);
+    font-stretch: 75%;
+    font-weight: 800;
+    font-size: 20px !important;
+    line-height: 1.2;
+}
+
+.ent .gtd-input,
+.ent .gtd-field textarea {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0 0 12px;
+    padding: 8px 10px;
+    font-family: var(--font-type);
+    font-size: 15px;
+    border: 1px solid var(--ink-3);
+    border-radius: 4px;
+    background: var(--paper);
+    color: var(--ink);
+    resize: vertical;
+}
+
+.ent .gtd-field {
+    display: block;
+}
+
+.ent .gtd-field-label {
+    display: block;
+    font-family: var(--font-display);
+    font-stretch: 75%;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--red);
+}
+
+.ent .gtd-hint {
+    display: block;
+    font-size: 13px;
+    color: var(--ink-2);
+    margin: 2px 0 4px;
+}
+
+.ent .gtd-tools {
+    margin-top: 14px;
+}
+
+.ent .gtd-tools .keys {
+    display: flex;
+    gap: 8px;
+}
+
+.ent .gtd-note {
+    font-family: var(--font-type);
+    font-size: 13px;
+    color: var(--ink-3);
+}
+
+.ent .gtd-list {
+    margin-top: 24px;
+    border-top: 3px solid var(--ink);
+    padding-top: 12px;
+}
+
+.ent .gtd-list h3 {
+    font-family: var(--font-display);
+    font-stretch: 75%;
+    font-weight: 800;
+    font-size: 26px;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.ent .gtd-list ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.ent .gtd-list > ul > li {
+    padding: 10px 0;
+    border-bottom: 1px solid var(--line);
+}
+
+.ent .gtd-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.ent .gtd-list .sub,
+.ent .gtd-sub .sub {
+    font-family: var(--font-type);
+    font-size: 13px;
+    color: var(--ink-3);
+}
+
+.ent .gtd-ok,
+.ent .gtd-warn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: var(--font-type);
+    font-size: 13px;
+}
+
+.ent .gtd-ok svg,
+.ent .gtd-warn svg {
+    width: 12px;
+    height: 12px;
+}
+
+.ent .gtd-warn {
+    color: var(--red);
+}
+
+.ent .gtd-project dl {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: 4px 14px;
+    margin: 8px 0;
+    font-size: 15px;
+}
+
+.ent .gtd-project dt {
+    font-family: var(--font-display);
+    font-stretch: 75%;
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size: 13px;
+    letter-spacing: 0.06em;
+    color: var(--ink-2);
+}
+
+.ent .gtd-project dd {
+    margin: 0;
+}
+
+.ent .gtd-sub {
+    padding-left: 16px !important;
+    list-style: disc !important;
+    font-size: 15px;
+}
+
+.ent .article-body .article-machine {
+    margin: 28px 0 32px;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.ent .article-body .article-machine .gtd-step p {
+    margin: 8px 0 12px;
+}
+
+@media (max-width: 860px) {
+    .ent .gtd-body {
+        grid-template-columns: 1fr;
+    }
+
+    .ent .article .gtd-body {
+        grid-template-columns: 1fr;
+    }
+}
+
+.ent .article .gtd-body {
+    grid-template-columns: 1fr;
+}

@@ -87,6 +87,9 @@ window.EngineRoom = (function () {
         { id: 'oil-economy', title: 'The Oil Economy', text: 'A company grows on a resource that never comes back. Set the growth goal, double the oil field, raise the price. Watch where the peak goes.', open: true },
         { id: 'fishery', title: 'The Fishery', text: 'Capital on a renewable resource. Fish grow back, unless the fleet grows faster. Nets, sonar or trawlers: settle, swing or collapse.', open: true }
     ];
+    const WORKBENCH = [
+        { id: 'getting-things-done', title: 'Getting Things Done', text: 'Bring what is on your mind. Each item walks the workflow until it lands where it belongs: done, delegated, scheduled or a next action.', open: true }
+    ];
     const PICTURE_STATISTICS = [
         { id: 'square-metre', title: 'One Square Metre', text: 'What does a million buy? Floor space in the ten priciest housing markets, counted in tiles.', open: true }
     ];
@@ -119,6 +122,16 @@ window.EngineRoom = (function () {
                     </div>
                     <div class="exhibits track">
                         ${LEARNING_CURVE.map((x, i) => card(x, `Step ${i + 1}`)).join('')}
+                    </div>
+                </section>
+
+                <section class="er-section">
+                    <div class="er-section-head">
+                        <h2>Workbench</h2>
+                        <p>Machines for your own work. Bring a real problem and leave with a next action.</p>
+                    </div>
+                    <div class="exhibits">
+                        ${WORKBENCH.map(x => card(x, 'Tool')).join('')}
                     </div>
                 </section>
 
@@ -463,9 +476,11 @@ window.EngineRoom = (function () {
         close3d();
         if (window.EngineRoomShop) window.EngineRoomShop.stop();
         if (window.EngineRoomFishery) window.EngineRoomFishery.leave();
+        if (window.EngineRoomGtd) window.EngineRoomGtd.leave();
         if (parts[1] === 'oil-economy') renderOil(view);
         else if (parts[1] === 'bicycle-shop' && window.EngineRoomShop) window.EngineRoomShop.render(view, H);
         else if (parts[1] === 'fishery' && window.EngineRoomFishery) window.EngineRoomFishery.render(view, H);
+        else if (parts[1] === 'getting-things-done' && window.EngineRoomGtd) window.EngineRoomGtd.render(view, H);
         else if (parts[1] === 'square-metre' && window.EngineRoomSqm) window.EngineRoomSqm.render(view, H);
         else renderHall(view);
     }

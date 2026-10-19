@@ -100,8 +100,57 @@ ENTERPRISER_ARTICLES.push(
             <p class="power-ex">Example: Toyota</p>
             <p>Toyota's lean manufacturing system (kaizen, kanban, andon cords and just-in-time production) gave it a sustained cost and quality advantage. Its processes were refined over decades and are incredibly hard to replicate effectively.</p>
 
+            <h2>The Seven Powers</h2>
+            <ol class="power-list">
+                <li>Scale Economies</li>
+                <li>Network Economies</li>
+                <li>Counter-Positioning</li>
+                <li>Switching Costs</li>
+                <li>Branding</li>
+                <li>Cornered Resource</li>
+                <li>Process Power</li>
+            </ol>
+
             <h2>Which do you hold?</h2>
             <p>The oldest businesses in the <a href="#/index">Index</a> rarely rely on one power alone. A name built over generations, a process no rival has the patience to copy. Ask of your own work which of the seven it holds today, and which it could build.</p>
             <p class="definition">Source: Hamilton Helmer, <i>7 Powers: The Foundations of Business Strategy</i> (2016).</p>`
+    }
+);
+
+ENTERPRISER_ARTICLES.push(
+    {
+        id: 'getting-things-done',
+        title: 'Getting Things Done',
+        dek: 'A clear head is a builder\'s first tool. David Allen\'s workflow, four properties every project should define, and a machine to try it on your own list.',
+        author: 'Simon Allmer',
+        date: '2026-10-20',
+        url: '#/articles/getting-things-done',
+        mentions: [],
+        html: `
+            <p>Every builder carries more than they can hold. Orders, ideas, promises, a door that squeaks. In <i>Getting Things Done</i>, first published in 2001, David Allen argued that the mind is for having ideas, not for holding them. Get everything out of your head, decide what each thing is, and keep it where you will see it at the right moment.</p>
+            <p>His method has five steps: capture, clarify, organize, reflect, engage. The machine below runs the middle of it. Write down whatever is on your mind, then walk each item down the workflow until it lands where it belongs.</p>
+
+            <div class="article-machine" data-machine="getting-things-done"></div>
+            <p class="power-ex"><a href="#/machines/getting-things-done">Open the machine on its own page →</a></p>
+
+            <h2>The two questions</h2>
+            <p>Everything turns on two questions. <b>Is it actionable?</b> If not, it goes in the trash, on a Someday / Maybe list, or into reference. If it is, <b>what's the next action?</b> Not “the catalogue,” but “call the printer about paper samples.” A next action is something you could do right now, with your hands.</p>
+            <p>Then three rules sort the actions. Under two minutes, do it now, since filing it takes longer. If someone else should do it, delegate it and note it under Waiting For. If it must happen on a given day, it goes in the calendar. Everything else goes on the Next Actions list.</p>
+
+            <h2>Four properties of every project</h2>
+            <p>Anything that takes more than one step is a project, whether it is a company, a division, a series or a single product. Before its first action, each should have four properties defined.</p>
+            <p class="power-ex">Vision</p>
+            <p>Also known as the outcome. It gives a clear picture of the finished thing, and a clear picture leads to intuitive, creative solutions for the way to get there.</p>
+            <p class="power-ex">Purpose</p>
+            <p>Asking the why question gives people focus and strengthens collaboration. When the purpose is shared, people stop asking for permission and start helping.</p>
+            <p class="power-ex">Principles</p>
+            <p>The boundaries of good behaviour. Allen offers a test: complete the sentence “I would give others totally free rein to do this as long as they…” Whatever finishes the sentence is a principle. A second question helps too: what behaviour might undermine what I'm doing, and how can I prevent it?</p>
+            <p class="power-ex">Technical Insight</p>
+            <p>The new quality that sets the work apart from anything else out there. A vision says where you are going; the insight says why only you can get there this way.</p>
+            <p>The machine asks for all four whenever an item turns out to be a project. Open the Projects tray and look for an unlit lamp: a project with no next action is only a wish.</p>
+
+            <h2>The weekly review</h2>
+            <p>The system works only if you trust it, and you trust it only if you look at it. Once a week, empty the IN tray, read every list, check what you are waiting for, and look again at Someday / Maybe. Allen calls the result a mind like water: calm, and ready for whatever lands in it.</p>
+            <p class="definition">Source: David Allen, <i>Getting Things Done: The Art of Stress-Free Productivity</i> (2001; revised 2015).</p>`
     }
 );

@@ -324,6 +324,8 @@
                     <div class="article-body">${a.html}</div>
                 </article>
             </div>`;
+        // Machines embedded in an article: <div data-machine="getting-things-done"></div>
+        view.querySelectorAll('[data-machine="getting-things-done"]').forEach(el => window.EngineRoomGtd && window.EngineRoomGtd.mount(el, { esc, fmt, bulb, dot }));
     }
 
     // ---------- Index ----------
@@ -581,6 +583,7 @@
         const section = ['index', 'machines', 'articles'].includes(parts[0]) ? parts[0] : 'home';
         root.querySelectorAll('[data-nav]').forEach(a => a.classList.toggle('active', a.dataset.nav === section));
 
+        if (window.EngineRoomGtd) window.EngineRoomGtd.leave();
         if (section === 'machines') window.EngineRoom.render(view, parts, { esc, fmt, bulb, dot });
         else if (section === 'index' && parts[1]) renderEntry(decodeURIComponent(parts[1]));
         else if (section === 'index') renderIndex();
