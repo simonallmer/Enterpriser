@@ -1,5 +1,6 @@
 // Enterpriser — standalone app. Renders into #enterpriser, hash-routed:
 //   #/            Articles (welcome)
+//   #/articles/<id> One article (articles.js)
 //   #/index       Enterpriser Index
 //   #/index/<uid> Index entry
 // Style rules: style-doctrine.md. Data rules: schema.md.
@@ -236,7 +237,7 @@
                         <p>The tools change. A printer with movable type, a lathe, a 3D printer guided by code. The craft of deciding what to make, and making it well, stays.</p>
                     </div>
                     <div>
-                        <p>The first articles arrive soon. The <a href="#/machines">Machines</a> are ready to teach now: a bicycle shop, an oil economy and a fishery you can run yourself. And the <a href="#/index">Enterpriser Index</a> is open: ${fmt(entries.length)} businesses worldwide, ranked by how long they have lasted.</p>
+                        <p>The first article is out: <a href="#/articles/universal-merchant">The Universal Merchant</a>. The <a href="#/machines">Machines</a> are ready to teach now: a bicycle shop, an oil economy and a fishery you can run yourself. And the <a href="#/index">Enterpriser Index</a> is open: ${fmt(entries.length)} businesses worldwide, ranked by how long they have lasted.</p>
                         <p class="definition"><b>en·ter·pris·er</b> (n.) One who undertakes a business or venture. From Old French <i>entreprendre</i>, “to undertake.”</p>
                     </div>
                 </div>
@@ -248,11 +249,11 @@
                 </div>
 
                 <div class="building">
-                    <div class="floor" style="--floor:var(--mustard)">
+                    <a class="floor link" href="#/articles/${ARTICLES[0].id}" style="--floor:var(--mustard)">
                         <div class="num"><b>1</b>Read it</div>
-                        <div><h3>Articles</h3><p>Writing meant to last. How things get made, bold plans, and builders on what worked and what broke.</p></div>
+                        <div><h3>Articles →</h3><p>Writing meant to last. How things get made, bold plans, and builders on what worked and what broke. First up: ${esc(ARTICLES[0].title)}.</p></div>
                         <span style="color:var(--mustard)">${PICTO.plan}</span>
-                    </div>
+                    </a>
                     <a class="floor link" href="#/machines" style="--floor:var(--blue)">
                         <div class="num"><b>2</b>Run it</div>
                         <div><h3>Machines →</h3><p>How systems behave. Stocks, flows and feedback loops you can set running, and statistics you count by eye.</p></div>
@@ -273,6 +274,30 @@
                     </div>
                     <a class="btn" href="#/index">Open the Index →</a>
                 </section>
+            </div>`;
+    }
+
+    const ARTICLES = ENTERPRISER_ARTICLES;
+
+    function renderArticle(id) {
+        const a = ARTICLES.find(x => x.id === id);
+        if (!a) {
+            view.innerHTML = `<div class="wrap"><a class="crumb" href="#/">← Articles</a><p class="empty">Article not found.</p></div>`;
+            return;
+        }
+        const date = new Date(a.date + 'T00:00:00').toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+        view.innerHTML = `
+            <div class="wrap">
+                <a class="crumb" href="#/">← Articles</a>
+                <article class="article">
+                    <header class="article-head">
+                        <span class="label">Article</span>
+                        <h1>${esc(a.title)}</h1>
+                        <p class="dek">${esc(a.dek)}</p>
+                        <p class="byline">${esc(a.author)} · ${date}</p>
+                    </header>
+                    <div class="article-body">${a.html}</div>
+                </article>
             </div>`;
     }
 
@@ -534,6 +559,7 @@
         if (section === 'machines') window.EngineRoom.render(view, parts, { esc, fmt, bulb, dot });
         else if (section === 'index' && parts[1]) renderEntry(decodeURIComponent(parts[1]));
         else if (section === 'index') renderIndex();
+        else if (parts[0] === 'articles' && parts[1]) renderArticle(decodeURIComponent(parts[1]));
         else renderArticles();
 
         window.scrollTo(0, 0);

@@ -2086,3 +2086,90 @@ body {
     .ent .table td.col-age { grid-column: 2 / 4; grid-row: 2; }
     .ent .table td.col-data { grid-column: 2 / 4; grid-row: 3; }
 }
+
+/* ---------- Article ---------- */
+
+.ent .article {
+    max-width: 68ch;
+    margin: 0 auto;
+    padding: 24px 0 72px;
+}
+
+.ent .article-head {
+    text-align: center;
+    padding-bottom: 28px;
+    margin-bottom: 32px;
+    border-bottom: 1px solid var(--line);
+}
+
+.ent .article-head h1 {
+    font-family: var(--font-display);
+    font-stretch: 62%;
+    font-weight: 800;
+    font-size: clamp(44px, 8vw, 92px);
+    line-height: 0.92;
+    text-transform: uppercase;
+    margin: 8px 0 16px;
+}
+
+.ent .article-head .dek {
+    font-size: 19px;
+    line-height: 1.45;
+    color: var(--ink-2);
+    margin: 0 0 14px;
+}
+
+.ent .article-head .byline {
+    font-family: var(--font-type);
+    font-size: 14px;
+    color: var(--ink-3);
+    margin: 0;
+}
+
+.ent .article-body {
+    font-size: 18px;
+    line-height: 1.65;
+}
+
+.ent .article-body h2 {
+    font-family: var(--font-display);
+    font-stretch: 75%;
+    font-weight: 800;
+    font-size: 26px;
+    line-height: 1.1;
+    text-transform: uppercase;
+    margin: 48px 0 14px;
+}
+
+.ent .article-body p {
+    margin: 0 0 16px;
+}
+
+.ent .article-body blockquote {
+    margin: 24px 0;
+    padding: 4px 0 4px 20px;
+    border-left: 3px solid var(--mustard);
+    font-style: italic;
+    font-size: 21px;
+    line-height: 1.45;
+}
+
+.ent .article-body a {
+    color: inherit;
+    text-decoration-color: var(--red);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 3px;
+}
+
+.ent .article-body a:hover {
+    color: var(--red);
+}
+
+.ent .article-body .definition {
+    margin-top: 40px;
+    font-family: var(--font-type);
+    font-size: 14px;
+    border-left: 3px solid var(--red);
+    padding-left: 12px;
+    color: var(--ink-2);
+}
