@@ -38,7 +38,7 @@ ENTERPRISER_ARTICLES.push(
 
             <h2>Take your place</h2>
             <p>The tools change with every age: a galley, a ledger, a railroad, a 3D printer guided by code. The calling stays. To undertake something, to connect people who have never met, and to build a thing well enough that it outlasts you.</p>
-            <p>Enterpriser is written for those who answer that call. <a href="#/"><b>Articles</b></a> carry the craft, and each should still be worth reading in the decades to come. <a href="#/machines"><b>Machines</b></a> let you run the patterns that every builder meets. The <a href="#/index"><b>Index</b></a> keeps the record of businesses worldwide, ranked by how long they have lasted.</p>
+            <p>Enterpriser is written for those who answer that call. <a href="#/articles"><b>Articles</b></a> carry the craft, and each should still be worth reading in the decades to come. <a href="#/machines"><b>Machines</b></a> let you run the patterns that every builder meets. The <a href="#/index"><b>Index</b></a> keeps the record of businesses worldwide, ranked by how long they have lasted.</p>
             <p>The line that runs from the merchants of Ragusa to the enterprisers of Pittsburgh is still open. You are welcome in it.</p>
             <p class="definition"><b>en·ter·pris·er</b> (n.) One who undertakes a business or venture. From Old French <i>entreprendre</i>, “to undertake.”</p>`
     }

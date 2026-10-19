@@ -1,5 +1,6 @@
 // Enterpriser — standalone app. Renders into #enterpriser, hash-routed:
-//   #/            Articles (welcome)
+//   #/            Home (welcome)
+//   #/articles    Articles (list)
 //   #/articles/<id> One article (articles.js)
 //   #/index       Enterpriser Index
 //   #/index/<uid> Index entry
@@ -143,7 +144,7 @@
                     <span class="brand-name">Enterpriser</span>
                 </a>
                 <nav class="nav">
-                    <a href="#/" data-nav="articles">Articles</a>
+                    <a href="#/articles" data-nav="articles">Articles</a>
                     <a href="#/machines" data-nav="machines">Machines</a>
                     <a href="#/index" data-nav="index">Index</a>
                 </nav>
@@ -164,7 +165,7 @@
     root.querySelector('.lamp').addEventListener('click', () => setTheme(!isDark()));
     paintLamp();
 
-    // ---------- Articles ----------
+    // ---------- Home ----------
 
     // 5×7 dot-matrix glyphs for the lamp marquee
     const GLYPHS = {
@@ -210,7 +211,7 @@
                 <rect x="40.5" y="57" width="15" height="4" rx="1.5" fill="currentColor"/><rect x="42" y="63" width="12" height="4" rx="1.5" fill="currentColor"/></svg>`
     };
 
-    function renderArticles() {
+    function renderHome() {
         const m = marquee('BUILD');
         const countries = new Set(entries.map(e => e.hq.country)).size;
         const oldest = byAge[0];
@@ -249,7 +250,7 @@
                 </div>
 
                 <div class="building">
-                    <a class="floor link" href="#/articles/${ARTICLES[0].id}" style="--floor:var(--mustard)">
+                    <a class="floor link" href="#/articles" style="--floor:var(--mustard)">
                         <div class="num"><b>1</b>Read it</div>
                         <div><h3>Articles →</h3><p>Writing meant to last. How things get made, bold plans, and builders on what worked and what broke. First up: ${esc(ARTICLES[0].title)}.</p></div>
                         <span style="color:var(--mustard)">${PICTO.plan}</span>
@@ -279,16 +280,39 @@
 
     const ARTICLES = ENTERPRISER_ARTICLES;
 
+    const dateLabel = iso => new Date(iso + 'T00:00:00').toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+
+    function renderArticleList() {
+        const list = [...ARTICLES].sort((a, b) => b.date.localeCompare(a.date));
+        view.innerHTML = `
+            <div class="wrap">
+                <div class="er-head">
+                    <span class="label">Read it</span>
+                    <h1>Articles</h1>
+                    <p>Writing meant to last. How things get made, bold plans, and builders on what worked and what broke.</p>
+                </div>
+                <div class="article-list">
+                    ${list.map(a => `
+                        <a class="article-item" href="#/articles/${a.id}">
+                            <span class="byline">${esc(a.author)} · ${dateLabel(a.date)}</span>
+                            <h2>${esc(a.title)}</h2>
+                            <p>${esc(a.dek)}</p>
+                            <span class="exhibit-go">Read it →</span>
+                        </a>`).join('')}
+                </div>
+            </div>`;
+    }
+
     function renderArticle(id) {
         const a = ARTICLES.find(x => x.id === id);
         if (!a) {
-            view.innerHTML = `<div class="wrap"><a class="crumb" href="#/">← Articles</a><p class="empty">Article not found.</p></div>`;
+            view.innerHTML = `<div class="wrap"><a class="crumb" href="#/articles">← Articles</a><p class="empty">Article not found.</p></div>`;
             return;
         }
-        const date = new Date(a.date + 'T00:00:00').toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+        const date = dateLabel(a.date);
         view.innerHTML = `
             <div class="wrap">
-                <a class="crumb" href="#/">← Articles</a>
+                <a class="crumb" href="#/articles">← Articles</a>
                 <article class="article">
                     <header class="article-head">
                         <span class="label">Article</span>
@@ -553,14 +577,15 @@
     function route() {
         const parts = location.hash.replace(/^#\/?/, '').split('/').filter(Boolean);
         if (parts[0] === 'engine-room') { location.replace('#/' + ['machines', ...parts.slice(1)].join('/')); return; }
-        const section = ['index', 'machines'].includes(parts[0]) ? parts[0] : 'articles';
+        const section = ['index', 'machines', 'articles'].includes(parts[0]) ? parts[0] : 'home';
         root.querySelectorAll('[data-nav]').forEach(a => a.classList.toggle('active', a.dataset.nav === section));
 
         if (section === 'machines') window.EngineRoom.render(view, parts, { esc, fmt, bulb, dot });
         else if (section === 'index' && parts[1]) renderEntry(decodeURIComponent(parts[1]));
         else if (section === 'index') renderIndex();
-        else if (parts[0] === 'articles' && parts[1]) renderArticle(decodeURIComponent(parts[1]));
-        else renderArticles();
+        else if (section === 'articles' && parts[1]) renderArticle(decodeURIComponent(parts[1]));
+        else if (section === 'articles') renderArticleList();
+        else renderHome();
 
         window.scrollTo(0, 0);
     }

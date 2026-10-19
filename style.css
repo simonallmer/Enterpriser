@@ -2173,3 +2173,45 @@ body {
     padding-left: 12px;
     color: var(--ink-2);
 }
+
+/* ---------- Article list ---------- */
+
+.ent .article-list {
+    max-width: 68ch;
+    margin: 0 auto;
+    padding-bottom: 72px;
+    border-top: 1px solid var(--line);
+}
+
+.ent .article-item {
+    display: block;
+    padding: 28px 0;
+    border-bottom: 1px solid var(--line);
+    text-decoration: none;
+    color: inherit;
+}
+
+.ent .article-item .byline {
+    font-family: var(--font-type);
+    font-size: 14px;
+    color: var(--ink-3);
+}
+
+.ent .article-item h2 {
+    font-family: var(--font-display);
+    font-stretch: 75%;
+    font-weight: 800;
+    font-size: clamp(28px, 4vw, 40px);
+    line-height: 1.02;
+    text-transform: uppercase;
+    margin: 8px 0 10px;
+}
+
+.ent .article-item p {
+    margin: 0;
+    color: var(--ink-2);
+}
+
+.ent .article-item:hover h2 {
+    color: var(--red);
+}
