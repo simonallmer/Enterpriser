@@ -206,14 +206,9 @@
         const oldest = byAge[0];
         view.innerHTML = `
             <div class="wrap">
-                <section class="panel hero-panel">
-                    ${NUMERALS.map(([ch, x, y, size, color], i) =>
-                        `<span class="numeral" style="left:${x}%;top:${y}%;font-size:calc(${size}px * var(--num-scale, 1));color:${color};animation-delay:-${i * 0.8}s" aria-hidden="true">${ch}</span>`).join('')}
-                    <div class="stage">
-                        ${m.svg}
-                        <div class="stage-caption">FIG. 1 — ${m.lit} LAMPS. THE LIGHT GOES ON.</div>
-                    </div>
-                </section>
+                <figure class="cover">
+                    <img src="images/cover/enterpriser-cover.jpg" alt="Enterpriser cover by Simon Allmer: a man in a top hat stands on a stormy harbour quay among cranes and containers, arms raised, as a ship pitches in the waves." width="1194" height="1600" fetchpriority="high">
+                </figure>
 
                 <h1 class="ad-headline">Welcome to <span class="hl"><u>Enterpriser</u></span></h1>
 
@@ -264,7 +259,22 @@
                     </div>
                     <a class="btn" href="#/index">Open the Index →</a>
                 </section>
+
+                <section class="panel hero-panel">
+                    ${NUMERALS.map(([ch, x, y, size, color], i) =>
+                        `<span class="numeral" style="left:${x}%;top:${y}%;font-size:calc(${size}px * var(--num-scale, 1));color:${color};animation-delay:-${i * 0.8}s" aria-hidden="true">${ch}</span>`).join('')}
+                    <div class="stage">
+                        ${m.svg}
+                        <div class="stage-caption">FIG. 1 — ${m.lit} LAMPS. THE LIGHT GOES ON.</div>
+                    </div>
+                </section>
             </div>`;
+        const panel = view.querySelector('.hero-panel');
+        if (!('IntersectionObserver' in window)) { panel.classList.add('on'); return; }
+        const io = new IntersectionObserver(([e]) => {
+            if (e.isIntersecting) { panel.classList.add('on'); io.disconnect(); }
+        }, { threshold: 0.5 });
+        io.observe(panel);
     }
 
     const ARTICLES = ENTERPRISER_ARTICLES;

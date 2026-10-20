@@ -328,10 +328,30 @@ body {
     to { transform: translateY(-10px); }
 }
 
-/* ---------- Articles: hero ad ---------- */
+/* ---------- Home: cover ---------- */
+
+.ent .cover {
+    margin: 28px auto 0;
+    width: fit-content;
+    max-width: 100%;
+    border: 1px solid var(--ink);
+    box-shadow: 0 18px 40px -18px rgba(0, 0, 0, 0.55);
+}
+
+.ent .cover img {
+    display: block;
+    width: auto;
+    max-width: 100%;
+    height: calc(100vh - 72px - 56px);
+    height: calc(100svh - 72px - 56px);
+    min-height: 420px;
+    object-fit: contain;
+}
+
+/* ---------- Home: BUILD marquee ---------- */
 
 .ent .hero-panel {
-    margin-top: 28px;
+    margin: 0 0 64px;
     border: 1px solid var(--ink);
 }
 
@@ -356,6 +376,10 @@ body {
 
 .ent .marquee .lit {
     opacity: 0;
+}
+
+/* The lamps switch on once the panel scrolls into view */
+.ent .hero-panel.on .marquee .lit {
     animation: ent-switch-on 0.25s forwards;
 }
 
@@ -1893,7 +1917,8 @@ body {
 
 @media (prefers-reduced-motion: reduce) {
     .ent .numeral { animation: none; }
-    .ent .marquee .lit { animation: none; opacity: 1; }
+    .ent .marquee .lit,
+    .ent .hero-panel.on .marquee .lit { animation: none; opacity: 1; }
     .ent .sqm-block i { animation: none; }
 }
 
@@ -2013,6 +2038,17 @@ body {
 
     .ent .hero-panel {
         --num-scale: 0.5;
+    }
+
+    .ent .cover {
+        margin-top: 16px;
+        width: auto;
+    }
+
+    .ent .cover img {
+        width: 100%;
+        height: auto;
+        min-height: 0;
     }
 
     .ent .hero-panel .stage {
