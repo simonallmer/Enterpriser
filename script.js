@@ -116,16 +116,6 @@
 
     // ---------- Shell ----------
 
-    // Logo: a vacuum tube with a glowing filament (Univac 120 reference)
-    const logo = `<svg viewBox="0 0 32 40" aria-hidden="true">
-        <path d="M8 31 V12 a8 8 0 0 1 16 0 V31 Z" fill="var(--midnight)" stroke="currentColor" stroke-width="1.6"/>
-        <path d="M11.5 29 V13 a4.5 4.5 0 0 1 9 0 V29" fill="none" stroke="var(--steel)" stroke-width="1.2" opacity=".8"/>
-        <path d="M13.5 26 V18 l2.5 -3 l2.5 3 V26" fill="none" stroke="url(#ent-bulb-on)" stroke-width="2" stroke-linejoin="round" class="glow"/>
-        <ellipse cx="13" cy="9.5" rx="1.6" ry="3" fill="#FFFFFF" opacity=".35"/>
-        <rect x="6.5" y="31" width="19" height="3.5" rx="1" fill="currentColor"/>
-        <g stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><line x1="11" y1="34.5" x2="11" y2="39"/><line x1="16" y1="34.5" x2="16" y2="39"/><line x1="21" y1="34.5" x2="21" y2="39"/></g>
-    </svg>`;
-
     root.innerHTML = `
         <svg width="0" height="0" style="position:absolute" aria-hidden="true">
             <defs>
@@ -140,8 +130,7 @@
         <header class="masthead">
             <div class="wrap">
                 <a class="brand" href="#/" aria-label="Enterpriser home">
-                    ${logo}
-                    <span class="brand-name">Enterpriser</span>
+                    <span class="brand-name">E<span class="brand-rest">nterpriser</span></span>
                 </a>
                 <nav class="nav">
                     <a href="#/articles" data-nav="articles">Articles</a>

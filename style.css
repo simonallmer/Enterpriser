@@ -171,12 +171,6 @@ body {
     text-decoration: none;
 }
 
-.ent .brand svg {
-    width: 30px;
-    height: 38px;
-    flex: none;
-}
-
 .ent .brand-name {
     font-family: var(--font-display);
     font-stretch: 125%;
@@ -1947,6 +1941,17 @@ body {
     }
 }
 
+/* Phones held upright: the title shrinks to its initial */
+@media (max-width: 640px) and (orientation: portrait) {
+    .ent .brand-rest {
+        display: none;
+    }
+
+    .ent .brand .brand-name {
+        font-size: 24px;
+    }
+}
+
 @media (max-width: 640px) {
     .ent .wrap {
         padding: 0 16px;
@@ -1955,11 +1960,6 @@ body {
     .ent .masthead .wrap {
         gap: 10px;
         height: 64px;
-    }
-
-    .ent .brand svg {
-        width: 24px;
-        height: 30px;
     }
 
     .ent .brand-name {
@@ -1979,10 +1979,6 @@ body {
         padding: 8px 5px;
         font-size: 13px;
         letter-spacing: 0.08em;
-    }
-
-    .ent .brand-name {
-        display: none;
     }
 
     .ent .er-charts {
